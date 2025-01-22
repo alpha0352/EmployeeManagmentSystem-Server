@@ -9,6 +9,22 @@ namespace EMS_Repositories
 {
     public class Admin : User
     {
+        public Admin()
+        {
+            
+        }
+        public Admin(string name,int id,string pwd,string designation,string role,double salary,int casuals,int sick,int approved)
+        {
+            this.m_Id = id; 
+            this.m_name = name;
+            this.m_pwd = pwd;
+            this.m_designation = designation;
+            this.m_role = role;
+            this.m_salary = salary;
+            this.m_leaves = new Leaves(casuals,sick,approved);
+            this.m_attendance = new Attendance(false,0,0,0,0,0);
+        }
+
         public bool AddEmployee()
         {
             Console.WriteLine("Employee Added");

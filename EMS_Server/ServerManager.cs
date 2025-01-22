@@ -90,15 +90,21 @@ namespace EMS_Server
                 while (client.client_socket.Connected)
                 {
 
-                    byte[] buffer = new byte[1024];
+                    byte[] buffer = new byte[2048];
                     int bytesRead = ns.Read(buffer, 0,buffer.Length);
                     string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
+                                       
+                    //Debug.WriteLine($"\n\nIsNullorEmpty: {string.IsNullOrEmpty(message)}\n\n");
+                    //Debug.WriteLine($"\n\nIsNullOrWhiteSpace: {string.IsNullOrWhiteSpace(message)}\n\n");
+                    if (!string.IsNullOrEmpty(message))
+                    {
+                        Console.WriteLine($"\n\nReceived: {message}\n\n");
+                        Debug.WriteLine($"\n\nReceived: {message}\n\n");
+                        Packet jsonPacket = JsonSerializer.Deserialize<Packet>(message);
+                        msgRecieved?.Invoke(client, jsonPacket); //inquire why this invoke causes an issue.
+                        //pkthndlr.HandleRequest(client, jsonPacket);
+                    }
 
-                    Packet jsonPacket = JsonSerializer.Deserialize<Packet>(message);
-                    Console.WriteLine($"\n\nReceived: {message}\n\n");
-                    Debug.WriteLine($"\n\nReceived: {message}\n\n");
-
-                    msgRecieved?.Invoke(client,jsonPacket);
                 }
             } 
             catch(Exception ex)
@@ -106,6 +112,10 @@ namespace EMS_Server
                 if (ex.GetType().Name == "IOException")
                 {
                     Console.WriteLine("Client Disconnected");
+                }
+                else
+                {
+                    Debug.WriteLine("SOMEOTHER EXCEPTION");
                 }
 
                     
@@ -118,11 +128,13 @@ namespace EMS_Server
 
         }
 
+        //public static void SendMessage(string pkt,string type,Client client)
         public static void SendMessage(Packet pkt,Client client)
         {
             byte[] buffer = new byte[1024];
             NetworkStream ns = client.client_socket.GetStream();
-            Console.WriteLine($"\n\nSending: {pkt.dataPayload}\n\n");
+            //Console.WriteLine($"\n\nSending: {pkt.dataPayload}\n\n");
+            //Debug.WriteLine($"\n\nSending: {pkt.dataPayload}\n\n");
             buffer = Encoding.ASCII.GetBytes(JsonSerializer.Serialize(pkt));
             ns.WriteAsync(buffer, 0, buffer.Length);
             ns.Flush();

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http.Json;
 using System.Net.Sockets;
@@ -32,67 +33,87 @@ namespace EMS_Server
     {
         public PacketHandler()
         {
-            ServerManager.msgRecieved += HandleRequest;
-        }
-        private void HandleRequest(Client client,Packet pkt)
-        {
-            //Console.WriteLine("type: " + pkt.type);
-            //Console.WriteLine("method: " + pkt.method);
-            //Console.WriteLine("dataType: " + pkt.dataType);
-            //Console.WriteLine("dataPayload: " + pkt.dataPayload);
-            //Console.WriteLine("INVOKED");
-
-            switch (pkt.method)
+            if (!isSubscribed)
             {
-                case "GET":
-                    switch (pkt.dataType)
-                    {
-                        case "AdminCache":
-                            string AdminData = JsonSerializer.Serialize(CacheManager.Instance.AdminCache);
-                            //var Payload = new
-                            //{
-                            //    type = "Response",
-                            //    method = "POST",
-                            //    dataType = "AdminCache",
-                            //    dataPayload = AdminData
-
-                            //};
-                            Packet adminPkt = new Packet("Response", "POST", "AdminCache", AdminData);
-                            ServerManager.SendMessage(adminPkt, client);
-                            adminPkt = null;
-                            break;
-                        case "EmployeeCache":
-                            string EmployeeData = JsonSerializer.Serialize(CacheManager.Instance.EmployeeCache);
-                            Packet empPkt= new Packet("Response", "POST", "EmployeeCache", EmployeeData);
-                            ServerManager.SendMessage(empPkt, client);
-                            empPkt = null;
-                            break;
-                    }
-                    break;
-
-                    //case "POST":
-                    //    switch (dataType)
-                    //    {
-                    //        case "AdminCache":
-                    //            CacheManager.Instance.AdminCache = JsonSerializer.Deserialize<ObservableCollection<Admin>>(dataPayload);
-                    //            break;
-                    //        case "EmployeeCache":
-                    //            CacheManager.Instance.EmployeeCache = JsonSerializer.Deserialize<ObservableCollection<Employee>>(dataPayload);
-                    //            break;
-
-                    //    }
-                    //    break;
+                ServerManager.msgRecieved += HandleRequest;
+                isSubscribed = true;
+            }
+        }
+        private static bool isSubscribed = false;
 
 
+        public void HandleRequest(Client client,Packet pkt)
+        {
+
+            if (pkt.method == "GET")
+            {
+                if (pkt.dataType == "AdminCache")
+                {
+                    Console.WriteLine(pkt);
+                    string AdminData = JsonSerializer.Serialize(CacheManager.Instance.AdminCache);
+                    Packet adminPkt = new Packet("Response", "POST", "AdminCache", AdminData);
+                    //ServerManager.SendMessage(AdminData, "AdminCache", client);
+                    ServerManager.SendMessage(adminPkt, client);
+                }
+                else if (pkt.dataType == "EmployeeCache")
+                {
+                    string EmployeeData = JsonSerializer.Serialize(CacheManager.Instance.EmployeeCache);
+                    Packet empPkt = new Packet("Response", "POST", "EmployeeCache", EmployeeData);
+                    ServerManager.SendMessage(empPkt, client);
+                }
+            }
+            else if (pkt.method == "POST")
+            {
+                if (pkt.dataType == "AdminCache")
+                {
+                    CacheManager.Instance.AdminCache = JsonSerializer.Deserialize<ObservableCollection<Admin>>(pkt.dataPayload);
+                    Debug.WriteLine(CacheManager.Instance.AdminCache);
+                }
+                else if (pkt.dataType == "EmployeeCache")
+                {
+                    CacheManager.Instance.EmployeeCache = JsonSerializer.Deserialize<ObservableCollection<Employee>>(pkt.dataPayload);
+                    Debug.WriteLine(CacheManager.Instance.EmployeeCache);
+                }
             }
 
-            //string data=null;
-            //if(this.type == "request" && this.dataType == "AdminCache")
-            //{
-            //     data = JsonSerializer.Serialize(cm.AdminCache);
-            //     ServerManager.SendMessage(new Packet("Response", "POST", "AdminCache",data), client);
-            //}
             return;
+
+
+            //switch (pkt.method)
+            //{
+            //    case "GET":
+            //        switch (pkt.dataType)
+            //        {
+            //            case "AdminCache":
+            //                Console.WriteLine(pkt);
+            //                string AdminData = JsonSerializer.Serialize(CacheManager.Instance.AdminCache);
+            //                Packet adminPkt = new Packet("Response", "POST", "AdminCache", AdminData);
+            //                ServerManager.SendMessage(AdminData, "AdminCache", client);
+            //                break;
+            //            case "EmployeeCache":
+            //                string EmployeeData = JsonSerializer.Serialize(CacheManager.Instance.EmployeeCache);
+            //                Packet empPkt = new Packet("Response", "POST", "EmployeeCache", EmployeeData);
+            //                ServerManager.SendMessage(EmployeeData, "EmpCache", client);
+            //                break;
+            //        }
+            //        break;
+
+            //    case "POST":
+            //        switch (pkt.dataType)
+            //        {
+            //            case "AdminCache":
+            //                CacheManager.Instance.AdminCache = JsonSerializer.Deserialize<ObservableCollection<Admin>>(pkt.dataPayload);
+            //                break;
+            //            case "EmployeeCache":
+            //                CacheManager.Instance.EmployeeCache = JsonSerializer.Deserialize<ObservableCollection<Employee>>(pkt.dataPayload);
+            //                break;
+
+            //        }
+            //        break;
+
+
+            //}
+
         }
     }
 }

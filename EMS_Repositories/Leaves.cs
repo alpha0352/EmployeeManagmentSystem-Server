@@ -12,13 +12,13 @@ namespace EMS_Repositories
 
 
         public Leaves() { }
-        public Leaves(int casualLeaves,int sickLeaves, int approvedLeaves, int availLeaves, int balLeaves)
+        public Leaves(int casualLeaves,int sickLeaves, int approvedLeaves)
         {
-            this.m_BalanceLeaves = balLeaves;
             this.m_CasualLeaves = casualLeaves;
             this.m_SickLeaves = sickLeaves;
             this.m_ApprovedLeaves = approvedLeaves;
-            this.m_TotalAvailedLeaves = availLeaves;
+            this.m_TotalAvailedLeaves = 0; //initially zero
+            this.m_BalanceLeaves = casualLeaves + sickLeaves - approvedLeaves;
         }
     }
 

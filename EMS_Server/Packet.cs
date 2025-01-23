@@ -33,7 +33,7 @@ namespace EMS_Server
     {
         public PacketHandler()
         {
-            if (!isSubscribed)
+            if (!isSubscribed) //not necessary here, in case other used by class
             {
                 ServerManager.msgRecieved += HandleRequest;
                 isSubscribed = true;
@@ -115,5 +115,9 @@ namespace EMS_Server
             //}
 
         }
+        //~PacketHandler()
+        //{
+        //    ServerManager.msgRecieved -= HandleRequest;
+        //}
     }
 }

@@ -66,53 +66,20 @@ namespace EMS_Server
             {
                 if (pkt.dataType == "AdminCache")
                 {
-                    CacheManager.Instance.AdminCache = JsonSerializer.Deserialize<ObservableCollection<Admin>>(pkt.dataPayload);
+                    Admin recd_admin = JsonSerializer.Deserialize<Admin>(pkt.dataPayload);
+                    CacheManager.Instance.updateCache(recd_admin, pkt.type);
                     Debug.WriteLine(CacheManager.Instance.AdminCache);
                 }
                 else if (pkt.dataType == "EmployeeCache")
                 {
-                    CacheManager.Instance.EmployeeCache = JsonSerializer.Deserialize<ObservableCollection<Employee>>(pkt.dataPayload);
+                    Employee recd_emp = JsonSerializer.Deserialize<Employee>(pkt.dataPayload);
+                    CacheManager.Instance.updateCache(recd_emp, pkt.type);
                     Debug.WriteLine(CacheManager.Instance.EmployeeCache);
                 }
             }
 
             return;
 
-
-            //switch (pkt.method)
-            //{
-            //    case "GET":
-            //        switch (pkt.dataType)
-            //        {
-            //            case "AdminCache":
-            //                Console.WriteLine(pkt);
-            //                string AdminData = JsonSerializer.Serialize(CacheManager.Instance.AdminCache);
-            //                Packet adminPkt = new Packet("Response", "POST", "AdminCache", AdminData);
-            //                ServerManager.SendMessage(AdminData, "AdminCache", client);
-            //                break;
-            //            case "EmployeeCache":
-            //                string EmployeeData = JsonSerializer.Serialize(CacheManager.Instance.EmployeeCache);
-            //                Packet empPkt = new Packet("Response", "POST", "EmployeeCache", EmployeeData);
-            //                ServerManager.SendMessage(EmployeeData, "EmpCache", client);
-            //                break;
-            //        }
-            //        break;
-
-            //    case "POST":
-            //        switch (pkt.dataType)
-            //        {
-            //            case "AdminCache":
-            //                CacheManager.Instance.AdminCache = JsonSerializer.Deserialize<ObservableCollection<Admin>>(pkt.dataPayload);
-            //                break;
-            //            case "EmployeeCache":
-            //                CacheManager.Instance.EmployeeCache = JsonSerializer.Deserialize<ObservableCollection<Employee>>(pkt.dataPayload);
-            //                break;
-
-            //        }
-            //        break;
-
-
-            //}
 
         }
         //~PacketHandler()

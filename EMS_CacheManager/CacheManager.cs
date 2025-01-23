@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,6 +35,84 @@ namespace EMS_CacheManager
         {
             this.AdminCache = xmlHandler.Deserialize<ObservableCollection<Admin>>();
             this.EmployeeCache = xmlHandler.Deserialize<ObservableCollection<Employee>>();
+        }
+        public void updateCache<T>(T temp_obj,string action)
+        {
+            if (temp_obj is Employee emp)
+            {
+                switch (action)
+                {
+                    case "ADD":
+                        EmployeeCache.Add((Employee)(object)temp_obj);
+                        break;
+                    case "UPDATE":
+
+                        Employee TempEmp = EmployeeCache.FirstOrDefault(Employee => Employee.m_Id == emp.m_Id);
+
+                        //adminToEdit.m_Id = (int)obj;
+                        TempEmp.m_name = emp.m_name;
+                        TempEmp.m_pwd = emp.m_pwd;
+                        TempEmp.m_designation = emp.m_designation;
+                        TempEmp.m_role = emp.m_role;
+                        TempEmp.m_salary = emp.m_salary;
+                        TempEmp.m_leaves.m_SickLeaves = emp.m_leaves.m_SickLeaves;
+                        TempEmp.m_leaves.m_CasualLeaves = emp.m_leaves.m_CasualLeaves;
+                        TempEmp.m_leaves.m_TotalAvailedLeaves = emp.m_leaves.m_TotalAvailedLeaves;
+                        TempEmp.m_leaves.m_BalanceLeaves = emp.m_leaves.m_BalanceLeaves;
+                        
+                        break;
+
+                    case "DELETE":
+
+                        var itemToRemove = EmployeeCache.Where(e => e.m_Id == emp.m_Id).SingleOrDefault();
+                        if (itemToRemove != null)
+                        {
+                            EmployeeCache.Remove(itemToRemove);
+                           
+                        }
+                        break;
+                }
+            }
+            else if (temp_obj is Admin temp_admin)
+            {
+                switch (action)
+                {
+                    case "ADD":
+                        AdminCache.Add((Admin)(object)temp_obj);
+                        
+                        break;
+                    case "UPDATE":
+
+                        Admin EditAdmin = AdminCache.FirstOrDefault(Admin => Admin.m_Id == temp_admin.m_Id);
+
+                        //adminToEdit.m_Id = (int)obj;
+                        EditAdmin.m_name = temp_admin.m_name;
+                        EditAdmin.m_pwd = temp_admin.m_pwd;
+                        EditAdmin.m_designation = temp_admin.m_designation;
+                        EditAdmin.m_role = temp_admin.m_role;
+                        EditAdmin.m_salary = temp_admin.m_salary;
+                        EditAdmin.m_leaves.m_SickLeaves = temp_admin.m_leaves.m_SickLeaves;
+                        EditAdmin.m_leaves.m_CasualLeaves = temp_admin.m_leaves.m_CasualLeaves;
+                        EditAdmin.m_leaves.m_TotalAvailedLeaves = temp_admin.m_leaves.m_TotalAvailedLeaves;
+                        EditAdmin.m_leaves.m_BalanceLeaves = temp_admin.m_leaves.m_BalanceLeaves;
+                        
+                        break;
+
+                    case "DELETE":
+
+                        var itemToRemove = AdminCache.Where(e => e.m_Id == temp_admin.m_Id).SingleOrDefault();
+                        if (itemToRemove != null)
+                        {
+                            AdminCache.Remove(itemToRemove);
+                            
+                        }
+                        break;
+                }
+            }
+            else
+            {
+                Debug.WriteLine("Invalid DataType");
+            }
         }
 
         public void SaveCache()

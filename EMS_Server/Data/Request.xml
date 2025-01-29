@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Request>
+		<m_reqID>101</m_reqID>
+		<m_reqType>Signup</m_reqType>
+		<m_reqStatus>Pending</m_reqStatus>
+		<m_raisedBy>5</m_raisedBy>
+		<m_approvedBy>0</m_approvedBy>
+	</Request>
+	<Request>
+		<m_reqID>102</m_reqID>
+		<m_reqType>Leave</m_reqType>
+		<m_reqStatus>Approved</m_reqStatus>
+		<m_raisedBy>8</m_raisedBy>
+		<m_approvedBy>2</m_approvedBy>
+	</Request>
+</ArrayOfRequest>

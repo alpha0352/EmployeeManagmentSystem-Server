@@ -29,12 +29,14 @@ namespace EMS_CacheManager
 
         public ObservableCollection<Admin> AdminCache { get; set; }
         public ObservableCollection<Employee> EmployeeCache { get; set; }
+        public ObservableCollection<Request> RequestsCache { get; set; }
 
         private xmlSerializer xmlHandler = new xmlSerializer();
         private CacheManager()
         {
             this.AdminCache = xmlHandler.Deserialize<ObservableCollection<Admin>>();
             this.EmployeeCache = xmlHandler.Deserialize<ObservableCollection<Employee>>();
+            this.RequestsCache = xmlHandler.Deserialize<ObservableCollection<Request>>();
         }
         public void updateCache<T>(T temp_obj,string action)
         {
@@ -104,6 +106,34 @@ namespace EMS_CacheManager
                         if (itemToRemove != null)
                         {
                             AdminCache.Remove(itemToRemove);
+                            
+                        }
+                        break;
+                }
+            }
+            else if (temp_obj is Request temp_request)
+            {
+                switch (action)
+                {
+                    case "ADD":
+                        RequestsCache.Add((Request)(object)temp_obj);
+                        
+                        break;
+                    case "UPDATE":
+
+                        Request EditRequest = RequestsCache.FirstOrDefault(req => req.m_reqID == temp_request.m_reqID);
+
+                        //adminToEdit.m_Id = (int)obj;
+                        EditRequest.m_reqStatus = temp_request.m_reqStatus;
+                        
+                        break;
+
+                    case "DELETE":
+
+                        var itemToRemove = RequestsCache.Where(r => r.m_reqID == temp_request.m_reqID).SingleOrDefault();
+                        if (itemToRemove != null)
+                        {
+                            RequestsCache.Remove(itemToRemove);
                             
                         }
                         break;

@@ -134,7 +134,7 @@ namespace EMS_Server
             byte[] buffer = new byte[1024];
             NetworkStream ns = client.client_socket.GetStream();
             //Console.WriteLine($"\n\nSending: {pkt.dataPayload}\n\n");
-            //Debug.WriteLine($"\n\nSending: {pkt.dataPayload}\n\n");
+            Debug.WriteLine($"\n\nSending: {pkt.dataPayload}\n\n");
             buffer = Encoding.ASCII.GetBytes(JsonSerializer.Serialize(pkt));
             ns.WriteAsync(buffer, 0, buffer.Length);
             ns.Flush();

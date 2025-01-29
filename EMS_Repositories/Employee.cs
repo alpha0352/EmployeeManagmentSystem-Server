@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,6 +14,25 @@ namespace EMS_Repositories
         {
             
         }
+
+        public Employee(string name, int id, string pwd, string gender,DateTime dob, string email,string contactNo,string residence_address, string religion,string marStat) //called from Signup
+        {
+            this.m_Id = id;
+            this.m_name = name;
+            this.m_pwd = pwd;
+            this.m_gender = gender;
+            this.m_dob = dob;
+            this.m_email = email;
+            this.m_phone = contactNo;
+            this.m_address = residence_address;
+            this.m_religion = religion;
+            this.m_maritalstatus = marStat;
+            this.m_role = "Employee";
+            this.m_isAuthentic = false;
+            this.m_designation = "N/A"; 
+            this.m_attendance = new Attendance(false, 0, 0, 0, 0, 0);
+        }
+
         public Employee(string name, int id, string pwd, string designation, string role, double salary, int casuals, int sick, int approved)
         {
             this.m_Id = id;

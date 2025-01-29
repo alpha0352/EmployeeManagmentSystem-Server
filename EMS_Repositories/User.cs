@@ -12,100 +12,48 @@ namespace EMS_Repositories
     [Serializable]
     public class User : ModelBase
     {
-        private int _m_id;
         [XmlElement]
-        public int m_Id
-        {
-            get { return _m_id; }
-            set
-            {
-                _m_id = value;
-                OnPropertyChanged(nameof(m_Id));
-            }
-        }
+        public int m_Id { get; set; }
+        [XmlElement]
+        public string m_pwd { get; set; }
+        [XmlElement]
+        public string m_name { get; set; }
+        [XmlElement]
+        public string m_gender { get; set; }
 
-        private string _m_pwd;
         [XmlElement]
-        public string m_pwd
-        {
-            get { return _m_pwd; }
-            set
-            {
-                _m_pwd = value;
-                OnPropertyChanged(nameof(m_pwd));
-            }
-        }
+        public string m_email { get; set; }
 
-        private string _m_name;
         [XmlElement]
-        public string m_name
-        {
-            get { return _m_name; }
-            set
-            {
-                _m_name = value;
-                OnPropertyChanged(nameof(m_name));
-            }
-        }
+        public string m_phone { get; set; }
 
-        private string _m_designation;
         [XmlElement]
-        public string m_designation
-        {
-            get { return _m_designation; }
-            set
-            {
-                _m_designation = value;
-                OnPropertyChanged(nameof(m_designation));
-            }
-        }
+        public string m_address { get; set; }
 
-        private string _m_role;
         [XmlElement]
-        public string m_role
-        {
-            get { return _m_role; }
-            set
-            {
-                _m_role = value;
-                OnPropertyChanged(nameof(m_role));
-            }
-        }
+        public DateTime m_dob { get; set; }
 
-        private double _m_salary;
         [XmlElement]
-        public double m_salary
-        {
-            get { return _m_salary; }
-            set
-            {
-                _m_salary = value;
-                OnPropertyChanged(nameof(m_salary));
-            }
-        }
+        public string m_religion { get; set; }
 
-        private Attendance _m_attendance;
         [XmlElement]
-        public Attendance m_attendance
-        {
-            get { return _m_attendance; }
-            set
-            {
-                _m_attendance = value;
-                OnPropertyChanged(nameof(m_attendance));
-            }
-        }
+        public string m_maritalstatus { get; set; }
+        [XmlElement]
+        public string m_designation { get; set; }
+        [XmlElement]
+        public string m_role { get; set; }
+        [XmlElement]
+        public double m_salary { get; set; }
+        [XmlElement]
+        public Attendance m_attendance { get; set; }
+        [XmlElement]
+        public Leaves m_leaves { get; set; }
 
-        private Leaves _m_leaves;
         [XmlElement]
-        public Leaves m_leaves
-        {
-            get { return _m_leaves; }
-            set
-            {
-                _m_leaves = value;
-                OnPropertyChanged(nameof(m_leaves));
-            }
-        }
+        public Request m_request { get; set; }
+
+        [XmlElement]
+        public bool m_isAuthentic { get; set; }
+
     }
 }

@@ -61,6 +61,12 @@ namespace EMS_Server
                     Packet empPkt = new Packet("Response", "POST", "EmployeeCache", EmployeeData);
                     ServerManager.SendMessage(empPkt, client);
                 }
+                else if (pkt.dataType == "RequestCache")
+                {
+                    string ReqData = JsonSerializer.Serialize(CacheManager.Instance.RequestsCache);
+                    Packet reqPkt = new Packet("Response", "POST", "RequestCache", ReqData);
+                    ServerManager.SendMessage(reqPkt, client);
+                }
             }
             else if (pkt.method == "POST")
             {
@@ -75,6 +81,12 @@ namespace EMS_Server
                     Employee recd_emp = JsonSerializer.Deserialize<Employee>(pkt.dataPayload);
                     CacheManager.Instance.updateCache(recd_emp, pkt.type);
                     Debug.WriteLine(CacheManager.Instance.EmployeeCache);
+                } 
+                else if (pkt.dataType == "RequestCache")
+                {
+                    Request recd_req = JsonSerializer.Deserialize<Request>(pkt.dataPayload);
+                    CacheManager.Instance.updateCache(recd_req, pkt.type);
+                    Debug.WriteLine(CacheManager.Instance.RequestsCache);
                 }
             }
 

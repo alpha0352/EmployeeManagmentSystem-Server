@@ -12,8 +12,4 @@
     <ProjectReference Include="..\EMS_ServerUtilities\EMS_ServerUtilities.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Data\" />
-  </ItemGroup>
-
 </Project>

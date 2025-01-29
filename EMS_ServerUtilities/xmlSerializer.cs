@@ -21,6 +21,7 @@ namespace EMS_ServerUtilities
             string file_name = typeof(T) == typeof(Employee)? "Employee.xml" : 
                 typeof(T) == typeof(ObservableCollection<Employee>)? "Employee.xml" : 
                 typeof(T) == typeof(Admin) ? "Admin.xml" : typeof(T) == typeof(ObservableCollection<Admin>) ? "Admin.xml" : 
+                typeof(T) == typeof(Request) ? "Request.xml" : typeof(T) == typeof(ObservableCollection<Request>) ? "Request.xml" : 
                 throw new InvalidDataException("Invalid Object Type");
 
                 XmlSerializer serializer = new XmlSerializer(typeof(T));
@@ -39,6 +40,10 @@ namespace EMS_ServerUtilities
             else if (typeof(T) == typeof(Admin) || typeof(T) == typeof(ObservableCollection<Admin>))
             {
                 file_name = "Admin.xml";
+            }
+            else if (typeof(T) == typeof(Request) || typeof(T) == typeof(ObservableCollection<Request>))
+            {
+                file_name = "Request.xml";
             }
             else
             {

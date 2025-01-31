@@ -19,21 +19,36 @@ namespace EMS_Repositories
         public string m_reqStatus { get; set; } //Pending/Approved/Rejected
         
         [XmlElement]
-        public int m_raisedBy { get; set; } //User ID
+        public int? m_raisedBy { get; set; } //User ID
         
         [XmlElement]
-        public int m_approvedBy { get; set; } //Admin ID
+        public int? m_approvedBy { get; set; } //Admin ID
+
+        [XmlElement]
+        public DateTime m_requestdate { get; set; }
+
+        [XmlElement]
+        public DateTime? m_approveddate { get; set; }
+
+        [XmlElement]
+        public LeavesRequest m_leaverequest { get; set; }
+        
+        [XmlElement]
+        public AttendanceRequest m_attendancerequest { get; set; }
+        
+        public SignupRequest m_signuprequest { get; set; }
         public Request()
         {
         }
-        public Request(int reqId,string reqType,int raisedby,int approvedby)
+
+        // create different constructors for each type of request
+        public Request(int reqId, string reqType, int raisedby) //contructor for Signup request.
         {
             this.m_reqID = reqId;
             this.m_reqType = reqType;
             this.m_reqStatus = "Pending";
             this.m_raisedBy = raisedby;
-            this.m_approvedBy = approvedby;
-
+            this.m_requestdate = DateTime.Now;
         }
     }
 }

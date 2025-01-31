@@ -51,16 +51,22 @@ namespace EMS_CacheManager
 
                         Employee TempEmp = EmployeeCache.FirstOrDefault(Employee => Employee.m_Id == emp.m_Id);
 
+                        if(TempEmp == null)
+                        {
+                            TempEmp = EmployeeCache.FirstOrDefault(Employee => Employee.m_email == emp.m_email && Employee.m_name == emp.m_name);
+                        }
+
                         //adminToEdit.m_Id = (int)obj;
-                        TempEmp.m_name = emp.m_name;
-                        TempEmp.m_pwd = emp.m_pwd;
-                        TempEmp.m_designation = emp.m_designation;
-                        TempEmp.m_role = emp.m_role;
-                        TempEmp.m_salary = emp.m_salary;
-                        TempEmp.m_leaves.m_SickLeaves = emp.m_leaves.m_SickLeaves;
-                        TempEmp.m_leaves.m_CasualLeaves = emp.m_leaves.m_CasualLeaves;
-                        TempEmp.m_leaves.m_TotalAvailedLeaves = emp.m_leaves.m_TotalAvailedLeaves;
-                        TempEmp.m_leaves.m_BalanceLeaves = emp.m_leaves.m_BalanceLeaves;
+                        //TempEmp.m_name = emp.m_name;
+                        //TempEmp.m_pwd = emp.m_pwd;
+                        //TempEmp.m_designation = emp.m_designation;
+                        //TempEmp.m_role = emp.m_role;
+                        //TempEmp.m_salary = emp.m_salary;
+                        //TempEmp.m_leaves.m_SickLeaves = emp.m_leaves.m_SickLeaves;
+                        //TempEmp.m_leaves.m_CasualLeaves = emp.m_leaves.m_CasualLeaves;
+                        //TempEmp.m_leaves.m_TotalAvailedLeaves = emp.m_leaves.m_TotalAvailedLeaves;
+                        //TempEmp.m_leaves.m_BalanceLeaves = emp.m_leaves.m_BalanceLeaves;
+                        TempEmp = (Employee)(object)temp_obj;
                         
                         break;
 

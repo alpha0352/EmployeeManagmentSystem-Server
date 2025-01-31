@@ -22,7 +22,8 @@
       <m_TotalAvailedLeaves>2</m_TotalAvailedLeaves>
       <m_BalanceLeaves>16</m_BalanceLeaves>
     </m_leaves>
-  </Admin>`
+	  <m_isAuthentic>true</m_isAuthentic>
+  </Admin>
   <Admin>
     <m_Id>2</m_Id>
     <m_pwd>Admin123</m_pwd>
@@ -45,5 +46,6 @@
       <m_TotalAvailedLeaves>2</m_TotalAvailedLeaves>
       <m_BalanceLeaves>16</m_BalanceLeaves>
     </m_leaves>
+	  <m_isAuthentic>true</m_isAuthentic>
   </Admin>
 </ArrayOfAdmin>

@@ -27,10 +27,9 @@ namespace EMS_Repositories
             this.m_address = residence_address;
             this.m_religion = religion;
             this.m_maritalstatus = marStat;
-            this.m_role = "Employee";
             this.m_isAuthentic = false;
-            this.m_designation = "N/A"; 
             this.m_attendance = new Attendance(false, 0, 0, 0, 0, 0);
+            this.m_leaves = new Leaves(0,0,0);
         }
 
         public Employee(string name, int id, string pwd, string designation, string role, double salary, int casuals, int sick, int approved)

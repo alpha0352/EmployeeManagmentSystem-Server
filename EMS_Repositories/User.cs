@@ -39,7 +39,9 @@ namespace EMS_Repositories
         [XmlElement]
         public string m_maritalstatus { get; set; }
         [XmlElement]
-        public string m_designation { get; set; }
+        public string? m_designation { get; set; }
+        [XmlElement]
+        public string? m_department { get; set; }
         [XmlElement]
         public string m_role { get; set; }
         [XmlElement]
@@ -49,8 +51,8 @@ namespace EMS_Repositories
         [XmlElement]
         public Leaves m_leaves { get; set; }
 
-        [XmlElement]
-        public Request m_request { get; set; }
+        //[XmlElement]
+        //public Request m_request { get; set; }
 
         [XmlElement]
         public bool m_isAuthentic { get; set; }

@@ -13,7 +13,7 @@ namespace EMS_Repositories
         {
             
         }
-        public Admin(string name,int id,string pwd,string designation,string role,double salary,int casuals,int sick,int approved)
+        public Admin(string name,int id,string pwd,string designation,string role,double salary,int casuals,int sick,int annual)
         {
             this.m_Id = id; 
             this.m_name = name;
@@ -21,7 +21,7 @@ namespace EMS_Repositories
             this.m_designation = designation;
             this.m_role = role;
             this.m_salary = salary;
-            this.m_leaves = new Leaves(casuals,sick,approved);
+            this.m_leaves = new Leaves(casuals,sick,annual);
             this.m_attendance = new Attendance(false,0,0,0,0,0);
         }
 

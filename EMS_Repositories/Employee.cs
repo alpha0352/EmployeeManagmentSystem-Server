@@ -15,6 +15,28 @@ namespace EMS_Repositories
             
         }
 
+        public Employee(Employee other)
+        {
+            this.m_Id = other.m_Id;
+            this.m_pwd = other.m_pwd;
+            this.m_name = other.m_name;
+            this.m_gender = other.m_gender;
+            this.m_email = other.m_email;
+            this.m_phone = other.m_phone;
+            this.m_address = other.m_address;
+            this.m_dob = other.m_dob;
+            this.m_religion = other.m_religion;
+            this.m_maritalstatus = other.m_maritalstatus;
+            this.m_designation = other.m_designation;
+            this.m_department = other.m_department;
+            this.m_role = other.m_role;
+            this.m_salary = other.m_salary;
+            this.m_isAuthentic = other.m_isAuthentic;
+            this.m_attendance = other.m_attendance;
+            this.m_leaves = other.m_leaves;
+
+        }
+
         public Employee(string name, int id, string pwd, string gender,DateTime dob, string email,string contactNo,string residence_address, string religion,string marStat) //called from Signup
         {
             this.m_Id = id;

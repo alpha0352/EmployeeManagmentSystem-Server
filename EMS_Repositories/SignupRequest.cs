@@ -16,7 +16,7 @@ namespace EMS_Repositories
         public SignupRequest(int reqId, string reqType)
         {
             this.m_reqID = reqId;
-            this.m_reqStatus = "Pending";
+            this.m_reqStatus = RequestStatus.Pending;
             this.m_requestdate = DateTime.Now;
             //this.m_approveddate = DateTime.Now;
         }

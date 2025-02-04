@@ -8,6 +8,7 @@
 		<m_department>Development</m_department>
 		<m_role>Employee</m_role>
 		<m_salary>85000</m_salary>
+		
 		<m_attendance>
 			<isPresent>true</isPresent>
 			<m_presentdays>92</m_presentdays>
@@ -33,6 +34,13 @@
 		<m_department>Quality Assurance</m_department>
 		<m_role>Employee</m_role>
 		<m_salary>95000</m_salary>
+		<m_address>1234 Maple Street, Springfield, IL 62704</m_address>
+		<m_email>michael@trafix.com</m_email>
+		<m_phone>056332855222</m_phone>
+		<m_gender>Male</m_gender>
+		<m_maritalstatus>Single</m_maritalstatus>
+		<m_religion>Christian</m_religion>
+		<m_dob>2001-02-27T00:00:00</m_dob>
 		<m_attendance>
 			<isPresent>true</isPresent>
 			<m_presentdays>95</m_presentdays>
@@ -43,10 +51,11 @@
 		</m_attendance>
 		<m_leaves>
 			<m_CasualLeaves>15</m_CasualLeaves>
-			<m_SickLeaves>7</m_SickLeaves>
+			<m_SickLeaves>8</m_SickLeaves>
+			<m_AnnualLeaves>10</m_AnnualLeaves>
 			<m_ApprovedLeaves>4</m_ApprovedLeaves>
 			<m_TotalAvailedLeaves>4</m_TotalAvailedLeaves>
-			<m_BalanceLeaves>18</m_BalanceLeaves>
+			<m_BalanceLeaves>29</m_BalanceLeaves>
 		</m_leaves>
 		<m_isAuthentic>true</m_isAuthentic>
 	</Employee>

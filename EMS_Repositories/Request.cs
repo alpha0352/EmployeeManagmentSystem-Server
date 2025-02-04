@@ -7,16 +7,29 @@ using System.Xml.Serialization;
 
 namespace EMS_Repositories
 {
+    public enum RequestType
+    {
+        Attendance,
+        Leaves,
+        Signup
+    }
+
+    public enum RequestStatus
+    {
+        Pending,
+        Approved,
+        Rejected
+    }
     public class Request : ModelBase
     {
         [XmlElement]
         public int m_reqID { get; set; }
         
         [XmlElement]
-        public string m_reqType { get; set; } //Signup/Leaves/Attendance
+        public RequestType m_reqType { get; set; } //Signup/Leaves/Attendance
         
         [XmlElement]
-        public string m_reqStatus { get; set; } //Pending/Approved/Rejected
+        public RequestStatus m_reqStatus { get; set; } //Pending/Approved/Rejected
         
         [XmlElement]
         public int? m_raisedBy { get; set; } //User ID
@@ -42,11 +55,11 @@ namespace EMS_Repositories
         }
 
         // create different constructors for each type of request
-        public Request(int reqId, string reqType, int raisedby) //contructor for Signup request.
+        public Request(int reqId, int raisedby) //contructor for Signup request.
         {
             this.m_reqID = reqId;
-            this.m_reqType = reqType;
-            this.m_reqStatus = "Pending";
+            this.m_reqType = RequestType.Signup;
+            this.m_reqStatus = RequestStatus.Pending;
             this.m_raisedBy = raisedby;
             this.m_requestdate = DateTime.Now;
         }

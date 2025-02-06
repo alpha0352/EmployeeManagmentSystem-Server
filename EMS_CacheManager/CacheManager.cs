@@ -56,18 +56,8 @@ namespace EMS_CacheManager
                             TempEmp = EmployeeCache.FirstOrDefault(Employee => Employee.m_email == emp.m_email && Employee.m_name == emp.m_name);
                         }
 
-                        //adminToEdit.m_Id = (int)obj;
-                        //TempEmp.m_name = emp.m_name;
-                        //TempEmp.m_pwd = emp.m_pwd;
-                        //TempEmp.m_designation = emp.m_designation;
-                        //TempEmp.m_role = emp.m_role;
-                        //TempEmp.m_salary = emp.m_salary;
-                        //TempEmp.m_leaves.m_SickLeaves = emp.m_leaves.m_SickLeaves;
-                        //TempEmp.m_leaves.m_CasualLeaves = emp.m_leaves.m_CasualLeaves;
-                        //TempEmp.m_leaves.m_TotalAvailedLeaves = emp.m_leaves.m_TotalAvailedLeaves;
-                        //TempEmp.m_leaves.m_BalanceLeaves = emp.m_leaves.m_BalanceLeaves;
-                        TempEmp = (Employee)(object)temp_obj;
-                        
+                        TempEmp.UpdateFrom(emp);
+
                         break;
 
                     case "DELETE":
@@ -94,16 +84,17 @@ namespace EMS_CacheManager
                         Admin EditAdmin = AdminCache.FirstOrDefault(Admin => Admin.m_Id == temp_admin.m_Id);
 
                         //adminToEdit.m_Id = (int)obj;
-                        EditAdmin.m_name = temp_admin.m_name;
-                        EditAdmin.m_pwd = temp_admin.m_pwd;
-                        EditAdmin.m_designation = temp_admin.m_designation;
-                        EditAdmin.m_role = temp_admin.m_role;
-                        EditAdmin.m_salary = temp_admin.m_salary;
-                        EditAdmin.m_leaves.m_SickLeaves = temp_admin.m_leaves.m_SickLeaves;
-                        EditAdmin.m_leaves.m_CasualLeaves = temp_admin.m_leaves.m_CasualLeaves;
-                        EditAdmin.m_leaves.m_TotalAvailedLeaves = temp_admin.m_leaves.m_TotalAvailedLeaves;
-                        EditAdmin.m_leaves.m_BalanceLeaves = temp_admin.m_leaves.m_BalanceLeaves;
-                        
+                        //EditAdmin.m_name = temp_admin.m_name;
+                        //EditAdmin.m_pwd = temp_admin.m_pwd;
+                        //EditAdmin.m_designation = temp_admin.m_designation;
+                        //EditAdmin.m_role = temp_admin.m_role;
+                        //EditAdmin.m_salary = temp_admin.m_salary;
+                        //EditAdmin.m_leaves.m_SickLeaves = temp_admin.m_leaves.m_SickLeaves;
+                        //EditAdmin.m_leaves.m_CasualLeaves = temp_admin.m_leaves.m_CasualLeaves;
+                        //EditAdmin.m_leaves.m_TotalAvailedLeaves = temp_admin.m_leaves.m_TotalAvailedLeaves;
+                        //EditAdmin.m_leaves.m_BalanceLeaves = temp_admin.m_leaves.m_BalanceLeaves;
+                        EditAdmin.UpdateFrom(temp_admin);
+
                         break;
 
                     case "DELETE":
@@ -130,8 +121,11 @@ namespace EMS_CacheManager
                         Request EditRequest = RequestsCache.FirstOrDefault(req => req.m_reqID == temp_request.m_reqID);
 
                         //adminToEdit.m_Id = (int)obj;
+
                         EditRequest.m_reqStatus = temp_request.m_reqStatus;
-                        
+                        EditRequest.m_approvedBy = temp_request.m_approvedBy;
+                        EditRequest.m_approveddate = temp_request.m_approveddate;
+
                         break;
 
                     case "DELETE":
@@ -155,6 +149,7 @@ namespace EMS_CacheManager
         {
             xmlHandler.Serialize(this.AdminCache);
             xmlHandler.Serialize(this.EmployeeCache);
+            xmlHandler.Serialize(this.RequestsCache);
         }
 
         

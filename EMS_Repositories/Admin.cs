@@ -25,70 +25,36 @@ namespace EMS_Repositories
             this.m_attendance = new Attendance(false,0,0,0,0,0);
         }
 
-        public bool AddEmployee()
+        public void UpdateFrom(Admin other)
         {
-            Console.WriteLine("Employee Added");
-            return true;
-        }
-        public bool RemoveEmployee()
-        {
-            Console.WriteLine("Employee Removed");
-            return true;
-        }
-        public bool UpdateEmployee()
-        {
-            Console.WriteLine("Employee Updated");
-            return true;
-        }
-        public bool AddAdmin()
-        {
-            Console.WriteLine("Admin Added");
-            return true;
-        }
-        public bool RemoveAdmin()
-        {
-            Console.WriteLine("Admin Removed");
-            return true;
-        }
-        public bool UpdateAdmin()
-        {
-            Console.WriteLine("Admin Updated");
-            return true;
-        }
-        public bool AddLeave()
-        {
-            Console.WriteLine("Leave Added");
-            return true;
-        }
-        public bool RemoveLeave()
-        {
-            Console.WriteLine("Leave Removed");
-            return true;
-        }
-        public bool ApproveLeave()
-        {
-            Console.WriteLine("Leave Approved");
-            return true;
-        }
-        public bool AddAttendance()
-        {
-            Console.WriteLine("Attendance Added");
-            return true;
-        }
-        public bool RemoveAttendance()
-        {
-            Console.WriteLine("Attendance Removed");
-            return true;
-        }
-        public bool UpdateAttendance()
-        {
-            Console.WriteLine("Attendance Updated");
-            return true;
-        }
-        public bool AddPaySlip()
-        {
-            Console.WriteLine("PaySlip Added");
-            return true;
+            if (other == null) return;
+
+            this.m_Id = other.m_Id;
+            this.m_pwd = other.m_pwd;
+            this.m_name = other.m_name;
+            this.m_gender = other.m_gender;
+            this.m_email = other.m_email;
+            this.m_phone = other.m_phone;
+            this.m_address = other.m_address;
+            this.m_dob = other.m_dob;
+            this.m_religion = other.m_religion;
+            this.m_maritalstatus = other.m_maritalstatus;
+            this.m_designation = other.m_designation;
+            this.m_department = other.m_department;
+            this.m_role = other.m_role;
+            this.m_salary = other.m_salary;
+
+            if (other.m_attendance != null)
+                this.m_attendance = other.m_attendance;
+
+            if (other.m_leaves != null)
+                this.m_leaves = other.m_leaves;
+
+            // Uncomment if uses m_request
+            // if (other.m_request != null)
+            //    this.m_request = other.m_request;
+
+            this.m_isAuthentic = other.m_isAuthentic;
         }
     }
 }

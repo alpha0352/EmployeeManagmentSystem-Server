@@ -66,34 +66,37 @@ namespace EMS_Repositories
             this.m_attendance = new Attendance(false, 0, 0, 0, 0, 0);
 
         }
-        public bool CheckIn()
+
+        public void UpdateFrom(Employee other)
         {
-            Console.WriteLine("Checked-In");
-            return true;
+            if (other == null) return;
+
+            this.m_Id = other.m_Id;
+            this.m_pwd = other.m_pwd;
+            this.m_name = other.m_name;
+            this.m_gender = other.m_gender;
+            this.m_email = other.m_email;
+            this.m_phone = other.m_phone;
+            this.m_address = other.m_address;
+            this.m_dob = other.m_dob;
+            this.m_religion = other.m_religion;
+            this.m_maritalstatus = other.m_maritalstatus;
+            this.m_designation = other.m_designation;
+            this.m_department = other.m_department;
+            this.m_role = other.m_role;
+            this.m_salary = other.m_salary;
+
+            if (other.m_attendance != null)
+                this.m_attendance = other.m_attendance;
+
+            if (other.m_leaves != null)
+                this.m_leaves = other.m_leaves;
+
+            // Uncomment if uses m_request
+            // if (other.m_request != null)
+            //    this.m_request = other.m_request;
+
+            this.m_isAuthentic = other.m_isAuthentic;
         }
-
-        public bool CheckOut() 
-        { 
-            Console.WriteLine("Checked-Out"); return true; 
-        }
-
-        public bool ApplyLeave(int days)
-        {
-            Console.WriteLine("Applied for Leave");
-            return true;
-        }
-
-        public void CheckPaySlip()
-        {
-            Console.WriteLine("Checked PaySlip");
-        }
-
-        public void ViewAttendance()
-        {
-            Console.WriteLine("Viewed Attendance");
-        }
-
-
-
     }
 }

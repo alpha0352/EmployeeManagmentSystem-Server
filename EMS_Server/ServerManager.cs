@@ -63,15 +63,24 @@ namespace EMS_Server
                     Client newClient = new Client(client, uid);
                     clients.Add(newClient);
 
+                    if (clients.Count > 1) 
+                    {
+                        throw new Exception("server crash!");
+                    }
+
                     Task.Run(() => HandleClient(newClient));
                 }
             }
             catch (Exception ex)
             {
+                Debug.WriteLine("Exception in StartServer");
                 Console.WriteLine(ex.Message);
+                m_CacheManager.SaveCache();
             }
             finally
             {
+
+                Debug.WriteLine("Exception in StartServer");
                 serverSocket.Dispose();
                 serverSocket.Stop();
 
@@ -93,16 +102,12 @@ namespace EMS_Server
                     byte[] buffer = new byte[2048];
                     int bytesRead = ns.Read(buffer, 0,buffer.Length);
                     string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
-                                       
-                    //Debug.WriteLine($"\n\nIsNullorEmpty: {string.IsNullOrEmpty(message)}\n\n");
-                    //Debug.WriteLine($"\n\nIsNullOrWhiteSpace: {string.IsNullOrWhiteSpace(message)}\n\n");
                     if (!string.IsNullOrEmpty(message))
                     {
                         Console.WriteLine($"\n\nReceived: {message}\n\n");
                         Debug.WriteLine($"\n\nReceived: {message}\n\n");
                         Packet jsonPacket = JsonSerializer.Deserialize<Packet>(message);
-                        msgRecieved?.Invoke(client, jsonPacket); //inquire why this invoke causes an issue.
-                        //pkthndlr.HandleRequest(client, jsonPacket);
+                        msgRecieved?.Invoke(client, jsonPacket); 
                     }
 
                 }
@@ -127,8 +132,6 @@ namespace EMS_Server
             }
 
         }
-
-        //public static void SendMessage(string pkt,string type,Client client)
         public static void SendMessage(Packet pkt,Client client)
         {
             byte[] buffer = new byte[1024];
@@ -141,48 +144,3 @@ namespace EMS_Server
         }
     }
 }
-
-//var admins = new List<Employee>
-//{
-//    new Employee
-//    {
-//        m_Id = 1,
-//        m_name = "Harry Potter",
-//        m_designation = "System Administrator",
-//        m_role = "Employee",
-//        m_pwd = "Emp456",
-//        m_salary = 90000.00,
-//        m_attendance = new Attendance(true, 90, 10, 1, 2, 1),
-//        m_leaves = new Leaves(10, 10, 2, 2, 16)
-//    },
-//    new Employee
-//    {
-//        m_Id = 2,
-//        m_name = "John Doe",
-//        m_designation = "System Administrator",
-//        m_role = "Employee",
-//        m_salary = 90000.00,
-//        m_pwd = "Emp123",
-//        m_attendance = new Attendance(true, 90, 10, 1, 2, 1),
-//        m_leaves = new Leaves(10, 10, 2, 2, 16)
-//    }
-//};
-//Admin admin = new Admin();
-//admin.m_Id = 1;
-//admin.m_name = "Harry Potter";
-//admin.m_designation = "System Administrator";
-//admin.m_role = "Employee";
-//admin.m_pwd = "Emp456";
-//admin.m_salary = 90000.00;
-//admin.m_attendance = new Attendance(true, 90, 10, 1, 2, 1);
-//admin.m_leaves = new Leaves(10, 10, 2, 2, 16);
-
-//xmlSerializer xmlSerializer = new xmlSerializer();
-//xmlSerializer.Serialize(admins);
-
-//xmlSerializer xmlDeserializer = new xmlSerializer();
-//List<Admin> admins = xmlDeserializer.Deserialize<List<Admin>>();
-//foreach (Admin admin in admins)
-//{
-//    Console.WriteLine(admin.m_Id);
-//}

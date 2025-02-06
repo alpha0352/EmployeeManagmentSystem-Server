@@ -52,6 +52,7 @@ namespace EMS_Repositories
         public SignupRequest m_signuprequest { get; set; }
         public Request()
         {
+
         }
 
         // create different constructors for each type of request

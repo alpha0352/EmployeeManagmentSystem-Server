@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfEmployee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Employee>
+		<m_Id>8</m_Id>
+		<m_pwd>Emp123</m_pwd>
+		<m_name>Emily Watson</m_name>
+		<m_designation>Data Scientist</m_designation>
+		<m_department>Development</m_department>
+		<m_role>Employee</m_role>
+		<m_salary>85000</m_salary>
+		
+		<m_attendance>
+			<isPresent>true</isPresent>
+			<m_presentdays>92</m_presentdays>
+			<m_absentdays>8</m_absentdays>
+			<m_halfdays>0</m_halfdays>
+			<m_late>1</m_late>
+			<m_earlyleave>1</m_earlyleave>
+		</m_attendance>
+		<m_leaves>
+			<m_CasualLeaves>12</m_CasualLeaves>
+			<m_SickLeaves>5</m_SickLeaves>
+			<m_ApprovedLeaves>3</m_ApprovedLeaves>
+			<m_TotalAvailedLeaves>3</m_TotalAvailedLeaves>
+			<m_BalanceLeaves>19</m_BalanceLeaves>
+		</m_leaves>
+		<m_isAuthentic>true</m_isAuthentic>
+	</Employee>
+	<Employee>
+		<m_Id>9</m_Id>
+		<m_pwd>Emp456</m_pwd>
+		<m_name>Michael Brown</m_name>
+		<m_designation>Project Manager</m_designation>
+		<m_department>Quality Assurance</m_department>
+		<m_role>Employee</m_role>
+		<m_salary>95000</m_salary>
+		<m_address>1234 Maple Street, Springfield, IL 62704</m_address>
+		<m_email>michael@trafix.com</m_email>
+		<m_phone>056332855222</m_phone>
+		<m_gender>Male</m_gender>
+		<m_maritalstatus>Single</m_maritalstatus>
+		<m_religion>Christian</m_religion>
+		<m_dob>2001-02-27T00:00:00</m_dob>
+		<m_attendance>
+			<isPresent>true</isPresent>
+			<m_presentdays>95</m_presentdays>
+			<m_absentdays>5</m_absentdays>
+			<m_halfdays>1</m_halfdays>
+			<m_late>0</m_late>
+			<m_earlyleave>2</m_earlyleave>
+		</m_attendance>
+		<m_leaves>
+			<m_CasualLeaves>15</m_CasualLeaves>
+			<m_SickLeaves>8</m_SickLeaves>
+			<m_AnnualLeaves>10</m_AnnualLeaves>
+			<m_ApprovedLeaves>4</m_ApprovedLeaves>
+			<m_TotalAvailedLeaves>4</m_TotalAvailedLeaves>
+			<m_BalanceLeaves>29</m_BalanceLeaves>
+		</m_leaves>
+		<m_isAuthentic>true</m_isAuthentic>
+	</Employee>
+</ArrayOfEmployee>

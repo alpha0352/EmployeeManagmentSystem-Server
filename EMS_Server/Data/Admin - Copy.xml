@@ -4,7 +4,6 @@
     <m_Id>1</m_Id>
     <m_pwd>Emp456</m_pwd>
     <m_name>Harry Potter</m_name>
-    <m_dob>0001-01-01T00:00:00</m_dob>
     <m_designation>System Administrator</m_designation>
     <m_role>Admin</m_role>
     <m_salary>90000</m_salary>
@@ -19,18 +18,16 @@
     <m_leaves>
       <m_CasualLeaves>10</m_CasualLeaves>
       <m_SickLeaves>10</m_SickLeaves>
-      <m_AnnualLeaves>0</m_AnnualLeaves>
       <m_ApprovedLeaves>2</m_ApprovedLeaves>
       <m_TotalAvailedLeaves>2</m_TotalAvailedLeaves>
       <m_BalanceLeaves>16</m_BalanceLeaves>
     </m_leaves>
-    <m_isAuthentic>true</m_isAuthentic>
+	  <m_isAuthentic>true</m_isAuthentic>
   </Admin>
   <Admin>
     <m_Id>2</m_Id>
     <m_pwd>Admin123</m_pwd>
     <m_name>John Doe</m_name>
-    <m_dob>0001-01-01T00:00:00</m_dob>
     <m_designation>System Administrator</m_designation>
     <m_role>Admin</m_role>
     <m_salary>90000</m_salary>
@@ -45,11 +42,10 @@
     <m_leaves>
       <m_CasualLeaves>10</m_CasualLeaves>
       <m_SickLeaves>10</m_SickLeaves>
-      <m_AnnualLeaves>0</m_AnnualLeaves>
       <m_ApprovedLeaves>2</m_ApprovedLeaves>
       <m_TotalAvailedLeaves>2</m_TotalAvailedLeaves>
       <m_BalanceLeaves>16</m_BalanceLeaves>
     </m_leaves>
-    <m_isAuthentic>true</m_isAuthentic>
+	  <m_isAuthentic>true</m_isAuthentic>
   </Admin>
 </ArrayOfAdmin>

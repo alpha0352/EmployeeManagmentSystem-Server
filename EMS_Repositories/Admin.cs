@@ -13,7 +13,7 @@ namespace EMS_Repositories
         {
             
         }
-        public Admin(string name,int id,string pwd,string designation,string role,double salary,int casuals,int sick,int annual)
+        public Admin(string name,int id,string pwd,string designation, userRoles role,double salary,int casuals,int sick,int annual)
         {
             this.m_Id = id; 
             this.m_name = name;

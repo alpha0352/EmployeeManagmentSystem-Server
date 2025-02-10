@@ -51,12 +51,12 @@
       <m_earlyleave>2</m_earlyleave>
     </m_attendance>
     <m_leaves>
-      <m_CasualLeaves>15</m_CasualLeaves>
+      <m_CasualLeaves>10</m_CasualLeaves>
       <m_SickLeaves>8</m_SickLeaves>
-      <m_AnnualLeaves>10</m_AnnualLeaves>
-      <m_ApprovedLeaves>4</m_ApprovedLeaves>
-      <m_TotalAvailedLeaves>4</m_TotalAvailedLeaves>
-      <m_BalanceLeaves>29</m_BalanceLeaves>
+      <m_AnnualLeaves>0</m_AnnualLeaves>
+      <m_ApprovedLeaves>10</m_ApprovedLeaves>
+      <m_TotalAvailedLeaves>10</m_TotalAvailedLeaves>
+      <m_BalanceLeaves>18</m_BalanceLeaves>
     </m_leaves>
     <m_isAuthentic>true</m_isAuthentic>
   </Employee>

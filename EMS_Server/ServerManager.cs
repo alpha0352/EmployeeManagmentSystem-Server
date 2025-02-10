@@ -63,10 +63,10 @@ namespace EMS_Server
                     Client newClient = new Client(client, uid);
                     clients.Add(newClient);
 
-                    if (clients.Count > 1) 
-                    {
-                        throw new Exception("server crash!");
-                    }
+                    //if (clients.Count > 1) 
+                    //{
+                    //    throw new Exception("server crash!");
+                    //}
 
                     Task.Run(() => HandleClient(newClient));
                 }

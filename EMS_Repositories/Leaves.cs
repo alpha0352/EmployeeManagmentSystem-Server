@@ -9,7 +9,7 @@ namespace EMS_Repositories
         [XmlElement] public int m_SickLeaves { get; set; }
         [XmlElement] public int m_AnnualLeaves { get; set; }
         [XmlElement] public int m_ApprovedLeaves { get; set; }
-        [XmlElement] public int m_TotalAvailedLeaves { get; set; }
+        [XmlElement] public int m_TotalAvailedLeaves { get; set; }  
         [XmlElement] public int m_BalanceLeaves { get; set; }
 
 

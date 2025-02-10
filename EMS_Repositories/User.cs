@@ -9,6 +9,11 @@ using System.Xml.Serialization;
 
 namespace EMS_Repositories
 {
+    public enum userRoles
+    {
+        Admin,
+        Employee
+    }
     [Serializable]
     public class User : ModelBase
     {
@@ -43,7 +48,7 @@ namespace EMS_Repositories
         [XmlElement]
         public string? m_department { get; set; }
         [XmlElement]
-        public string m_role { get; set; }
+        public userRoles m_role { get; set; }
         [XmlElement]
         public double m_salary { get; set; }
         [XmlElement]

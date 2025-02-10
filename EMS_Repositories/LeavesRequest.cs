@@ -7,10 +7,16 @@ using System.Xml.Serialization;
 
 namespace EMS_Repositories
 {
+    public enum LeaveType
+    {
+        Casual,
+        Sick,
+        Annual
+    }
     public class LeavesRequest
     {
         [XmlElement]
-        public string m_leaveType { get; set; }
+        public LeaveType m_leaveType { get; set; }
         [XmlElement]
         public int m_noOfDays { get; set; }
         [XmlElement]
@@ -24,7 +30,7 @@ namespace EMS_Repositories
         {
             
         }
-        public LeavesRequest(string typeofleave,int noOfDays,DateTime start,DateTime end,string reason)
+        public LeavesRequest(LeaveType typeofleave,int noOfDays,DateTime start,DateTime end,string reason)
         {
 
             //this.m_approveddate = DateTime.Now;

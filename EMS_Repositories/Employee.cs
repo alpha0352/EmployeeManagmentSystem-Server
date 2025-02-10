@@ -54,7 +54,7 @@ namespace EMS_Repositories
             this.m_leaves = new Leaves(0,0,0);
         }
 
-        public Employee(string name, int id, string pwd, string designation, string role, double salary, int casuals, int sick, int approved)
+        public Employee(string name, int id, string pwd, string designation, userRoles role, double salary, int casuals, int sick, int approved)
         {
             this.m_Id = id;
             this.m_name = name;

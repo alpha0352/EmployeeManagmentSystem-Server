@@ -8,8 +8,16 @@ using System.Xml.Serialization;
 
 namespace EMS_Repositories
 {
+    public enum AttendanceType
+    {
+        Late,
+        HalfDay,
+        EarlyLeave 
+    }
     public  class AttendanceRequest
     {
+        [XmlElement]
+        public AttendanceType m_attendancetype { get; set; }
         [XmlElement]
         public DateTime m_attendanceDate { get; set; }
         [XmlElement]
@@ -26,9 +34,9 @@ namespace EMS_Repositories
         public AttendanceRequest()
         {
         }
-        public AttendanceRequest( DateTime attendanceDate, DateTime InDate, DateTime InTime, DateTime OutDate, DateTime OutTime,string reason)
+        public AttendanceRequest(AttendanceType attType, DateTime attendanceDate, DateTime InDate, DateTime InTime, DateTime OutDate, DateTime OutTime,string reason)
         {
-
+            this.m_attendancetype = attType;
             this.m_attendanceDate = attendanceDate;
             this.m_outdate = OutDate;
             this.m_outtime = OutTime;

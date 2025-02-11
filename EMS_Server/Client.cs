@@ -10,9 +10,9 @@ namespace EMS_Server
     public class Client
     {
         public TcpClient client_socket;
-        public string uid;
+        public Guid uid;
 
-        public Client(TcpClient client, string userID)
+        public Client(TcpClient client, Guid userID)
         {
             this.uid = userID;
             this.client_socket = client;

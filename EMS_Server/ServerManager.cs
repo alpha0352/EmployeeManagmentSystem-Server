@@ -56,11 +56,12 @@ namespace EMS_Server
 
                     byte[] uidbuffer = new byte[1024];
                     ns.Read(uidbuffer, 0, uidbuffer.Length);
-                    string uid = Encoding.UTF8.GetString(uidbuffer, 0, uidbuffer.Length);
+                    string msg = Encoding.UTF8.GetString(uidbuffer, 0, uidbuffer.Length);
 
-                    Console.WriteLine($"Client {uid} connected!");
+                    Guid clientID = Guid.NewGuid();
+                    Console.WriteLine($"Client {clientID} connected!");
                     
-                    Client newClient = new Client(client, uid);
+                    Client newClient = new Client(client, clientID);
                     clients.Add(newClient);
 
                     //if (clients.Count > 1) 
@@ -98,7 +99,6 @@ namespace EMS_Server
             {
                 while (client.client_socket.Connected)
                 {
-
                     byte[] buffer = new byte[2048];
                     int bytesRead = ns.Read(buffer, 0,buffer.Length);
                     string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);

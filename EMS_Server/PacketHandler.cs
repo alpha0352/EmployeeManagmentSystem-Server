@@ -1,34 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
-using System.Net.Http.Json;
-using System.Net.Sockets;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using EMS_CacheManager;
 using EMS_Repositories;
-using EMS_ServerUtilities;
 
 namespace EMS_Server
 {
-    public class Packet
-    {
-        public string type { get; set; }    // Request/Response
-        public string method { get; set; } // GET/POST
-        public string dataType { get; set; }    // AdminCache/EmployeeCache
-        public string dataPayload { get; set; }    // JSON data
-
-        public Packet(string type ,string method, string datatype,string datapayload)
-        {
-            this.type = type;
-            this.method = method;
-            this.dataType = datatype;
-            this.dataPayload = datapayload;
-        }
-    }
     public class PacketHandler
     {
         public PacketHandler()
@@ -42,47 +23,64 @@ namespace EMS_Server
         private static bool isSubscribed = false;
 
 
-        public void HandleRequest(Client client,Packet pkt)
+        public void HandleRequest(Client client, Packet pkt)
         {
 
-            if (pkt.method == "GET")
+            if (pkt.method == MethodType.GET)
             {
-                if (pkt.dataType == "AdminCache")
+                if (pkt.dataType == CacheType.Admin)
                 {
-                    Console.WriteLine(pkt);
                     string AdminData = JsonSerializer.Serialize(CacheManager.Instance.AdminCache);
-                    Packet adminPkt = new Packet("Response", "POST", "AdminCache", AdminData);
+                    Packet adminPkt = new Packet("Response", MethodType.POST, CacheType.Admin, AdminData);
                     //ServerManager.SendMessage(AdminData, "AdminCache", client);
                     ServerManager.SendMessage(adminPkt, client);
                 }
-                else if (pkt.dataType == "EmployeeCache")
+                else if (pkt.dataType == CacheType.Employee)
                 {
                     string EmployeeData = JsonSerializer.Serialize(CacheManager.Instance.EmployeeCache);
-                    Packet empPkt = new Packet("Response", "POST", "EmployeeCache", EmployeeData);
+                    Packet empPkt = new Packet("Response", MethodType.POST, CacheType.Employee, EmployeeData);
                     ServerManager.SendMessage(empPkt, client);
                 }
-                else if (pkt.dataType == "RequestCache")
+                else if (pkt.dataType == CacheType.Request)
                 {
                     string ReqData = JsonSerializer.Serialize(CacheManager.Instance.RequestsCache);
-                    Packet reqPkt = new Packet("Response", "POST", "RequestCache", ReqData);
+                    Packet reqPkt = new Packet("Response", MethodType.POST, CacheType.Request, ReqData);
                     ServerManager.SendMessage(reqPkt, client);
                 }
+                else if (pkt.dataType == CacheType.All)
+                {
+                    Dictionary <CacheType, string> AllCache = new Dictionary<CacheType, string>(); 
+
+                    string EmployeeData = JsonSerializer.Serialize(CacheManager.Instance.EmployeeCache);
+                    AllCache.Add(CacheType.Employee, EmployeeData);
+
+                    string AdminData = JsonSerializer.Serialize(CacheManager.Instance.AdminCache);
+                    AllCache.Add(CacheType.Admin, AdminData);
+
+                    string ReqData = JsonSerializer.Serialize(CacheManager.Instance.RequestsCache);
+                    AllCache.Add(CacheType.Request,ReqData);
+
+                    string allCache = JsonSerializer.Serialize(AllCache);
+                    Packet AllPkt = new Packet("Response", MethodType.POST, CacheType.All, allCache);
+                    ServerManager.SendMessage(AllPkt, client);
+
+                }
             }
-            else if (pkt.method == "POST")
+            else if (pkt.method == MethodType.POST)
             {
-                if (pkt.dataType == "AdminCache")
+                if (pkt.dataType == CacheType.Admin)
                 {
                     Admin recd_admin = JsonSerializer.Deserialize<Admin>(pkt.dataPayload);
                     CacheManager.Instance.updateCache(recd_admin, pkt.type);
                     Debug.WriteLine(CacheManager.Instance.AdminCache);
                 }
-                else if (pkt.dataType == "EmployeeCache")
+                else if (pkt.dataType == CacheType.Employee)
                 {
                     Employee recd_emp = JsonSerializer.Deserialize<Employee>(pkt.dataPayload);
                     CacheManager.Instance.updateCache(recd_emp, pkt.type);
                     Debug.WriteLine(CacheManager.Instance.EmployeeCache);
-                } 
-                else if (pkt.dataType == "RequestCache")
+                }
+                else if (pkt.dataType == CacheType.Request)
                 {
                     Request recd_req = JsonSerializer.Deserialize<Request>(pkt.dataPayload);
                     CacheManager.Instance.updateCache(recd_req, pkt.type);
@@ -94,9 +92,5 @@ namespace EMS_Server
 
 
         }
-        //~PacketHandler()
-        //{
-        //    ServerManager.msgRecieved -= HandleRequest;
-        //}
     }
 }

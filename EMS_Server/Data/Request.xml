@@ -84,4 +84,109 @@
       <m_reason>Flu</m_reason>
     </m_leaverequest>
   </Request>
+  <Request>
+    <m_reqID>103</m_reqID>
+    <m_reqType>Signup</m_reqType>
+    <m_reqStatus>Pending</m_reqStatus>
+    <m_raisedBy>0</m_raisedBy>
+    <m_approvedBy xsi:nil="true" />
+    <m_requestdate>2025-02-12T16:38:49.338697+05:00</m_requestdate>
+    <m_approveddate xsi:nil="true" />
+  </Request>
+  <Request>
+    <m_reqID>391</m_reqID>
+    <m_reqType>Leaves</m_reqType>
+    <m_reqStatus>Pending</m_reqStatus>
+    <m_raisedBy>871754</m_raisedBy>
+    <m_approvedBy xsi:nil="true" />
+    <m_requestdate>2025-02-12T16:45:34.2511998+05:00</m_requestdate>
+    <m_approveddate xsi:nil="true" />
+    <m_leaverequest>
+      <m_leaveType>Sick</m_leaveType>
+      <m_noOfDays>2</m_noOfDays>
+      <m_startDate>2024-01-16T00:00:00</m_startDate>
+      <m_endDate>2024-01-18T00:00:00</m_endDate>
+      <m_reason>Flu</m_reason>
+    </m_leaverequest>
+    <m_attendancerequest>
+      <m_attendancetype>Late</m_attendancetype>
+      <m_attendanceDate>0001-01-01T00:00:00</m_attendanceDate>
+      <m_indate>0001-01-01T00:00:00</m_indate>
+      <m_intime>0001-01-01T00:00:00</m_intime>
+      <m_outdate>0001-01-01T00:00:00</m_outdate>
+      <m_outtime>0001-01-01T00:00:00</m_outtime>
+    </m_attendancerequest>
+  </Request>
+  <Request>
+    <m_reqID>585</m_reqID>
+    <m_reqType>Attendance</m_reqType>
+    <m_reqStatus>Pending</m_reqStatus>
+    <m_raisedBy>871754</m_raisedBy>
+    <m_approvedBy xsi:nil="true" />
+    <m_requestdate>2025-02-12T16:46:17.4263801+05:00</m_requestdate>
+    <m_approveddate xsi:nil="true" />
+    <m_leaverequest>
+      <m_leaveType>Casual</m_leaveType>
+      <m_noOfDays>0</m_noOfDays>
+      <m_startDate>0001-01-01T00:00:00</m_startDate>
+      <m_endDate>0001-01-01T00:00:00</m_endDate>
+    </m_leaverequest>
+    <m_attendancerequest>
+      <m_attendancetype>HalfDay</m_attendancetype>
+      <m_attendanceDate>2024-01-17T00:00:00</m_attendanceDate>
+      <m_indate>2024-01-17T00:00:00</m_indate>
+      <m_intime>0001-01-01T00:00:00</m_intime>
+      <m_outdate>2024-01-17T00:00:00</m_outdate>
+      <m_outtime>0001-01-01T04:30:00</m_outtime>
+      <m_reason>personal Reason</m_reason>
+    </m_attendancerequest>
+  </Request>
+  <Request>
+    <m_reqID>395</m_reqID>
+    <m_reqType>Leaves</m_reqType>
+    <m_reqStatus>Pending</m_reqStatus>
+    <m_raisedBy>216563</m_raisedBy>
+    <m_approvedBy xsi:nil="true" />
+    <m_requestdate>2025-02-12T16:52:39.9460292+05:00</m_requestdate>
+    <m_approveddate xsi:nil="true" />
+    <m_leaverequest>
+      <m_leaveType>Casual</m_leaveType>
+      <m_noOfDays>5</m_noOfDays>
+      <m_startDate>2024-01-22T00:00:00</m_startDate>
+      <m_endDate>2024-01-26T00:00:00</m_endDate>
+      <m_reason>Tired.</m_reason>
+    </m_leaverequest>
+    <m_attendancerequest>
+      <m_attendancetype>Late</m_attendancetype>
+      <m_attendanceDate>0001-01-01T00:00:00</m_attendanceDate>
+      <m_indate>0001-01-01T00:00:00</m_indate>
+      <m_intime>0001-01-01T00:00:00</m_intime>
+      <m_outdate>0001-01-01T00:00:00</m_outdate>
+      <m_outtime>0001-01-01T00:00:00</m_outtime>
+    </m_attendancerequest>
+  </Request>
+  <Request>
+    <m_reqID>195</m_reqID>
+    <m_reqType>Attendance</m_reqType>
+    <m_reqStatus>Pending</m_reqStatus>
+    <m_raisedBy>216563</m_raisedBy>
+    <m_approvedBy xsi:nil="true" />
+    <m_requestdate>2025-02-12T16:53:12.1695104+05:00</m_requestdate>
+    <m_approveddate xsi:nil="true" />
+    <m_leaverequest>
+      <m_leaveType>Casual</m_leaveType>
+      <m_noOfDays>0</m_noOfDays>
+      <m_startDate>0001-01-01T00:00:00</m_startDate>
+      <m_endDate>0001-01-01T00:00:00</m_endDate>
+    </m_leaverequest>
+    <m_attendancerequest>
+      <m_attendancetype>Late</m_attendancetype>
+      <m_attendanceDate>2024-01-09T00:00:00</m_attendanceDate>
+      <m_indate>2024-01-15T00:00:00</m_indate>
+      <m_intime>0001-01-01T01:00:00</m_intime>
+      <m_outdate>2024-01-15T00:00:00</m_outdate>
+      <m_outtime>0001-01-01T08:00:00</m_outtime>
+      <m_reason>Personal reason.</m_reason>
+    </m_attendancerequest>
+  </Request>
 </ArrayOfRequest>

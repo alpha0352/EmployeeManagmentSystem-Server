@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using Microsoft.VisualBasic;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace EMS_Repositories
 {
@@ -43,6 +46,17 @@ namespace EMS_Repositories
             this.m_indate = InDate;
             this.m_intime = InTime;
             this.m_reason = reason;
+        }
+
+        public AttendanceRequest(AttendanceRequest other)
+        {
+            this.m_attendancetype = other.m_attendancetype;
+            this.m_attendanceDate = other.m_attendanceDate;
+            this.m_outdate = other.m_outdate;
+            this.m_outtime = other.m_outtime;
+            this.m_indate = other.m_indate;
+            this.m_intime = other.m_intime;
+            this.m_reason = other.m_reason;
         }
     }
 }

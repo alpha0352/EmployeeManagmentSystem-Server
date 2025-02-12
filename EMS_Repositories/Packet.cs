@@ -13,7 +13,7 @@ namespace EMS_Repositories
         Employee,
         Admin
     }
-    public enum MethodType { GET,POST }
+    public enum MethodType { GET,POST,PUT }
 
     public class Packet
     {

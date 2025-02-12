@@ -64,5 +64,24 @@ namespace EMS_Repositories
             this.m_raisedBy = raisedby;
             this.m_requestdate = DateTime.Now;
         }
+        public Request(Request other)
+        {
+            if (other == null) throw new ArgumentNullException(nameof(other));
+
+            m_reqID = other.m_reqID;
+            m_reqType = other.m_reqType;
+            m_reqStatus = other.m_reqStatus;
+            m_raisedBy = other.m_raisedBy;
+            m_approvedBy = other.m_approvedBy;
+            m_requestdate = other.m_requestdate;
+            m_approveddate = other.m_approveddate;
+
+            // Perform deep copies if needed
+            m_leaverequest = other.m_leaverequest != null ? new LeavesRequest(other.m_leaverequest) : null; ;
+            m_attendancerequest = other.m_attendancerequest != null ? new AttendanceRequest(other.m_attendancerequest) : null;
+            m_signuprequest = other.m_signuprequest != null ? new SignupRequest(other.m_signuprequest) : null;
+        
+        }
+
     }
 }

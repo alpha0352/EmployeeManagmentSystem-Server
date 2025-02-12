@@ -24,7 +24,7 @@ namespace EMS_Server
         private static CancellationTokenSource m_CancellationTokenSource;
         private static CancellationToken m_cancellationToken;
 
-        public static Action<Client,Packet> msgRecieved;
+        public static Action<Client, Packet> msgRecieved;
 
         private static CacheManager m_CacheManager;
         public async Task Init()
@@ -48,7 +48,7 @@ namespace EMS_Server
             try
             {
 
-                while(!m_CancellationTokenSource.IsCancellationRequested)
+                while (!m_CancellationTokenSource.IsCancellationRequested)
                 {
                     Console.WriteLine("Waiting for client....");
                     TcpClient client = serverSocket.AcceptTcpClient();
@@ -60,14 +60,14 @@ namespace EMS_Server
 
                     Guid clientID = Guid.NewGuid();
                     Console.WriteLine($"Client {clientID} connected!");
-                    
+
                     Client newClient = new Client(client, clientID);
                     clients.Add(newClient);
 
-                    //if (clients.Count > 1) 
-                    //{
-                    //    throw new Exception("server crash!");
-                    //}
+                    if (clients.Count > 1)
+                    {
+                        throw new Exception("server crash!");
+                    }
 
                     Task.Run(() => HandleClient(newClient));
                 }
@@ -95,24 +95,24 @@ namespace EMS_Server
             Client client = (Client)obj;
             PacketHandler pkthndlr = new PacketHandler();
             NetworkStream ns = client.client_socket.GetStream();
-            try 
+            try
             {
                 while (client.client_socket.Connected)
                 {
                     byte[] buffer = new byte[2048];
-                    int bytesRead = ns.Read(buffer, 0,buffer.Length);
+                    int bytesRead = ns.Read(buffer, 0, buffer.Length);
                     string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
                     if (!string.IsNullOrEmpty(message))
                     {
                         Console.WriteLine($"\n\nReceived: {message}\n\n");
                         Debug.WriteLine($"\n\nReceived: {message}\n\n");
                         Packet jsonPacket = JsonSerializer.Deserialize<Packet>(message);
-                        msgRecieved?.Invoke(client, jsonPacket); 
+                        msgRecieved?.Invoke(client, jsonPacket);
                     }
 
                 }
-            } 
-            catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 if (ex.GetType().Name == "IOException")
                 {
@@ -123,7 +123,7 @@ namespace EMS_Server
                     Debug.WriteLine("SOMEOTHER EXCEPTION");
                 }
 
-                    
+
             }
             finally
             {
@@ -132,7 +132,7 @@ namespace EMS_Server
             }
 
         }
-        public static void SendMessage(Packet pkt,Client client)
+        public static void SendMessage(Packet pkt, Client client)
         {
             byte[] buffer = new byte[1024];
             NetworkStream ns = client.client_socket.GetStream();
@@ -141,6 +141,24 @@ namespace EMS_Server
             buffer = Encoding.ASCII.GetBytes(JsonSerializer.Serialize(pkt));
             ns.WriteAsync(buffer, 0, buffer.Length);
             ns.Flush();
+        }
+
+        public static void BroadcastUpdates(Packet pkt,Client CurrentClient)
+        {
+            Console.WriteLine("Sending Broadcast...");
+            byte[] buffer = new byte[1024];
+            pkt.method = MethodType.PUT;
+            buffer = Encoding.ASCII.GetBytes(JsonSerializer.Serialize(pkt));
+
+            foreach (Client client in clients)
+            {
+                if (client != CurrentClient) 
+                {
+                    NetworkStream ns = client.client_socket.GetStream();
+                    ns.WriteAsync(buffer, 0, buffer.Length);
+                    
+                }
+            }
         }
     }
 }

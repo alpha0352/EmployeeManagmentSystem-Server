@@ -72,20 +72,22 @@ namespace EMS_Server
                 {
                     Admin recd_admin = JsonSerializer.Deserialize<Admin>(pkt.dataPayload);
                     CacheManager.Instance.updateCache(recd_admin, pkt.type);
-                    Debug.WriteLine(CacheManager.Instance.AdminCache);
+                    
+                    Debug.WriteLine("Updated Admin Cache");
                 }
                 else if (pkt.dataType == CacheType.Employee)
                 {
                     Employee recd_emp = JsonSerializer.Deserialize<Employee>(pkt.dataPayload);
                     CacheManager.Instance.updateCache(recd_emp, pkt.type);
-                    Debug.WriteLine(CacheManager.Instance.EmployeeCache);
+                    Debug.WriteLine("Updated Employee Cache");
                 }
                 else if (pkt.dataType == CacheType.Request)
                 {
                     Request recd_req = JsonSerializer.Deserialize<Request>(pkt.dataPayload);
                     CacheManager.Instance.updateCache(recd_req, pkt.type);
-                    Debug.WriteLine(CacheManager.Instance.RequestsCache);
+                    Debug.WriteLine("Updated Request Cache");
                 }
+                ServerManager.BroadcastUpdates(pkt,client);
             }
 
             return;

@@ -21,8 +21,10 @@ namespace EMS_Repositories
         public int m_Id { get; set; }
         [XmlElement]
         public string m_pwd { get; set; }
+
         [XmlElement]
         public string m_name { get; set; }
+
         [XmlElement]
         public string m_gender { get; set; }
 

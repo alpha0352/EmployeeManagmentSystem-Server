@@ -4,7 +4,9 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
+using System.Threading.Tasks.Dataflow;
 using System.Xml.Serialization;
 using EMS_Repositories;
 using EMS_ServerUtilities;
@@ -66,7 +68,6 @@ namespace EMS_CacheManager
                         if (itemToRemove != null)
                         {
                             EmployeeCache.Remove(itemToRemove);
-                           
                         }
                         break;
                 }
@@ -114,7 +115,6 @@ namespace EMS_CacheManager
                 {
                     case "ADD":
                         RequestsCache.Add((Request)(object)temp_obj);
-                        
                         break;
                     case "UPDATE":
 
@@ -122,9 +122,7 @@ namespace EMS_CacheManager
 
                         //adminToEdit.m_Id = (int)obj;
 
-                        EditRequest.m_reqStatus = temp_request.m_reqStatus;
-                        EditRequest.m_approvedBy = temp_request.m_approvedBy;
-                        EditRequest.m_approveddate = temp_request.m_approveddate;
+                        EditRequest = new Request(temp_request);
 
                         break;
 

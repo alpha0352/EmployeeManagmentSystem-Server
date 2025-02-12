@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,7 +29,7 @@ namespace EMS_Repositories
 
         public LeavesRequest()
         {
-            
+     
         }
         public LeavesRequest(LeaveType typeofleave,int noOfDays,DateTime start,DateTime end,string reason)
         {
@@ -41,6 +42,15 @@ namespace EMS_Repositories
             this.m_endDate = end;
             this.m_reason = reason;
 
+        }
+
+        public LeavesRequest(LeavesRequest other)
+        {
+            this.m_leaveType = other.m_leaveType;
+            this.m_noOfDays = other.m_noOfDays;
+            this.m_startDate = other.m_startDate;
+            this.m_endDate = other.m_endDate;
+            this.m_reason = other.m_reason;
         }
 
     }

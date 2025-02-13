@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -68,7 +69,12 @@ namespace EMS_Server
             }
             else if (pkt.method == MethodType.POST)
             {
-                if (pkt.dataType == CacheType.Admin)
+                if (pkt.dataType == CacheType.All)
+                {
+
+                    return;
+                }
+                else if (pkt.dataType == CacheType.Admin)
                 {
                     Admin recd_admin = JsonSerializer.Deserialize<Admin>(pkt.dataPayload);
                     CacheManager.Instance.updateCache(recd_admin, pkt.type);
@@ -89,6 +95,15 @@ namespace EMS_Server
                 }
                 ServerManager.BroadcastUpdates(pkt,client);
             }
+            else if(pkt.method == MethodType.PUT)
+            {
+                Dictionary<CacheType, string> allCache = JsonSerializer.Deserialize<Dictionary<CacheType, string>>(pkt.dataPayload);
+
+                CacheManager.Instance.EmployeeCache = JsonSerializer.Deserialize<ObservableCollection<Employee>>(allCache[CacheType.Employee]);
+                CacheManager.Instance.AdminCache = JsonSerializer.Deserialize<ObservableCollection<Admin>>(allCache[CacheType.Admin]);
+                CacheManager.Instance.RequestsCache = JsonSerializer.Deserialize<ObservableCollection<Request>>(allCache[CacheType.Request]);
+            }
+
 
             return;
 

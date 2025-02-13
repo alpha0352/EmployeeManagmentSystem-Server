@@ -49,7 +49,21 @@ namespace EMS_ServerUtilities
             {
                 throw new InvalidDataException("Invalid Object Type");
             }
-            //System.IO.FileNotFoundException
+
+            if (!File.Exists(path + file_name))
+            {
+                T defaultInstance = Activator.CreateInstance<T>();
+                Console.WriteLine($"File not found: {path + file_name}");
+
+                //Console.WriteLine(file_name + " not found. Do you want to create new?");
+                //string response = Console.ReadLine();
+                //if (response.ToUpper() == "NO")
+                //{
+                //    return defaultInstance;
+                //}
+
+                this.Serialize(defaultInstance);
+            }
 
             XmlSerializer serializer = new XmlSerializer(typeof(T));
             try

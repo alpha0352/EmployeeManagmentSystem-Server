@@ -83,5 +83,23 @@ namespace EMS_Repositories
         
         }
 
+        public void UpdateFrom(Request other)
+        {
+            if (other == null) throw new ArgumentNullException(nameof(other));
+
+            m_reqID = other.m_reqID;
+            m_reqType = other.m_reqType;
+            m_reqStatus = other.m_reqStatus;
+            m_raisedBy = other.m_raisedBy;
+            m_approvedBy = other.m_approvedBy;
+            m_requestdate = other.m_requestdate;
+            m_approveddate = other.m_approveddate;
+
+            // Perform deep copies if needed
+            m_leaverequest = other.m_leaverequest != null ? other.m_leaverequest : null;
+            m_attendancerequest = other.m_attendancerequest != null ? other.m_attendancerequest : null;
+            m_signuprequest = other.m_signuprequest != null ? other.m_signuprequest : null;
+        }
+
     }
 }

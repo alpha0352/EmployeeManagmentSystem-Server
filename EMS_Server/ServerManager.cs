@@ -64,10 +64,10 @@ namespace EMS_Server
                     Client newClient = new Client(client, clientID);
                     clients.Add(newClient);
 
-                    if (clients.Count > 1)
-                    {
-                        throw new Exception("server crash!");
-                    }
+                    //if (clients.Count > 1)
+                    //{
+                    //    throw new Exception("server crash!");
+                    //}
 
                     Task.Run(() => HandleClient(newClient));
                 }
@@ -99,7 +99,7 @@ namespace EMS_Server
             {
                 while (client.client_socket.Connected)
                 {
-                    byte[] buffer = new byte[2048];
+                    byte[] buffer = new byte[15000];
                     int bytesRead = ns.Read(buffer, 0, buffer.Length);
                     string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
                     if (!string.IsNullOrEmpty(message))
@@ -109,7 +109,6 @@ namespace EMS_Server
                         Packet jsonPacket = JsonSerializer.Deserialize<Packet>(message);
                         msgRecieved?.Invoke(client, jsonPacket);
                     }
-
                 }
             }
             catch (Exception ex)
@@ -120,10 +119,8 @@ namespace EMS_Server
                 }
                 else
                 {
-                    Debug.WriteLine("SOMEOTHER EXCEPTION");
+                    Debug.WriteLine(ex);
                 }
-
-
             }
             finally
             {

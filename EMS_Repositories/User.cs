@@ -11,8 +11,9 @@ namespace EMS_Repositories
 {
     public enum userRoles
     {
-        Admin,
-        Employee
+        Unassigned,
+        Employee,
+        Admin
     }
     [Serializable]
     public class User : ModelBase

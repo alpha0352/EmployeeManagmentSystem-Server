@@ -44,6 +44,7 @@ namespace EMS_Repositories
             this.m_pwd = pwd;
             this.m_gender = gender;
             this.m_dob = dob;
+            //this.m_role = userRoles.Employee;
             this.m_email = email;
             this.m_phone = contactNo;
             this.m_address = residence_address;

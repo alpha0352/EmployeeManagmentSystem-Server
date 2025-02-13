@@ -122,7 +122,7 @@ namespace EMS_CacheManager
 
                         //adminToEdit.m_Id = (int)obj;
 
-                        EditRequest = new Request(temp_request);
+                        EditRequest.UpdateFrom(temp_request);
 
                         break;
 

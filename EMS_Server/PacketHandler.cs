@@ -11,7 +11,7 @@ using EMS_Repositories;
 
 namespace EMS_Server
 {
-    public class PacketHandler
+    public class PacketHandler : IDisposable
     {
         public PacketHandler()
         {
@@ -108,6 +108,16 @@ namespace EMS_Server
             return;
 
 
+        }
+
+        public void Dispose()
+        {
+            Console.WriteLine("Disposed!");
+            if (isSubscribed) 
+            {
+                ServerManager.msgRecieved -= HandleRequest;
+                isSubscribed = false;
+            }
         }
     }
 }

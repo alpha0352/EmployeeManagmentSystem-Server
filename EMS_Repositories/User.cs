@@ -53,7 +53,7 @@ namespace EMS_Repositories
         [XmlElement]
         public userRoles m_role { get; set; }
         [XmlElement]
-        public double m_salary { get; set; }
+        public double? m_salary { get; set; }
         [XmlElement]
         public Attendance m_attendance { get; set; }
         [XmlElement]

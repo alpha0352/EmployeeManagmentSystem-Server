@@ -2,15 +2,22 @@
 <ArrayOfAdmin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Admin>
     <m_Id>1</m_Id>
-    <m_pwd>Emp456</m_pwd>
+    <m_pwd>480e5b2a75cc8b03794a4b8a0f83a11be441de00bbd237ba99f0b97d11038c5a</m_pwd>
     <m_name>Harry Potter</m_name>
-    <m_dob>0001-01-01T00:00:00</m_dob>
+    <m_gender>Male</m_gender>
+    <m_email>hpotter@trafix.com</m_email>
+    <m_phone>+12-354-3654-353</m_phone>
+    <m_address>1234 Street 4, Main Bvd, TX</m_address>
+    <m_dob>2004-02-17T00:00:00+05:00</m_dob>
+    <m_religion>Christianity</m_religion>
+    <m_maritalstatus>Single</m_maritalstatus>
     <m_designation>System Administrator</m_designation>
+    <m_department>HR</m_department>
     <m_role>Admin</m_role>
     <m_salary>90000</m_salary>
     <m_attendance>
       <isPresent>true</isPresent>
-      <m_presentdays>90</m_presentdays>
+      <m_presentdays>45</m_presentdays>
       <m_absentdays>10</m_absentdays>
       <m_halfdays>1</m_halfdays>
       <m_late>2</m_late>
@@ -30,8 +37,15 @@
     <m_Id>2</m_Id>
     <m_pwd>Admin123</m_pwd>
     <m_name>John Doe</m_name>
-    <m_dob>0001-01-01T00:00:00</m_dob>
+    <m_gender>Male</m_gender>
+    <m_email>johnd@trafix.com</m_email>
+    <m_phone>+98-767-8567-876</m_phone>
+    <m_address>7456 Dr. Beaverton, Oregon, US</m_address>
+    <m_dob>1995-05-01T00:00:00</m_dob>
+    <m_religion>Christianity</m_religion>
+    <m_maritalstatus>Married</m_maritalstatus>
     <m_designation>System Administrator</m_designation>
+    <m_department>Testing</m_department>
     <m_role>Admin</m_role>
     <m_salary>90000</m_salary>
     <m_attendance>

@@ -91,12 +91,12 @@ namespace EMS_Server
 
         private static void HandleClient(object obj)
         {
-
+            PacketHandler? pkthndlr = new PacketHandler();
             Client client = (Client)obj;
-            PacketHandler pkthndlr = new PacketHandler();
             NetworkStream ns = client.client_socket.GetStream();
             try
             {
+                
                 while (client.client_socket.Connected)
                 {
                     byte[] buffer = new byte[15000];
@@ -124,6 +124,10 @@ namespace EMS_Server
             }
             finally
             {
+                if(pkthndlr != null)
+                {
+                    pkthndlr.Dispose();
+                }
                 clients.Remove(client);
                 client.client_socket.Close();
             }

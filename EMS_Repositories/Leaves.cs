@@ -5,13 +5,13 @@ namespace EMS_Repositories
 {
     public class Leaves
     {
-        [XmlElement] public int m_CasualLeaves { get; set; }
-        [XmlElement] public int m_SickLeaves { get; set; }
-        [XmlElement] public int m_AnnualLeaves { get; set; }
-        [XmlElement] public int m_ApprovedLeaves { get; set; }
-        [XmlElement] public int m_TotalAvailedLeaves { get; set; }  
-        [XmlElement] public int m_BalanceLeaves { get; set; }
-
+        [XmlElement] public int? m_CasualLeaves { get; set; }
+        [XmlElement] public int? m_SickLeaves { get; set; }
+        [XmlElement] public int? m_AnnualLeaves { get; set; }
+        [XmlElement] public int? m_ApprovedLeaves { get; set; }
+        [XmlElement] public int? m_TotalAvailedLeaves { get; set; }  
+        [XmlElement] public int? m_BalanceLeaves { get; set; }
+                               
 
         public Leaves() { }
         public Leaves(int casualLeaves,int sickLeaves, int annualLeaves)

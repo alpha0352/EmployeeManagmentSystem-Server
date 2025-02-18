@@ -21,11 +21,11 @@
   <Request>
     <m_reqID>5225</m_reqID>
     <m_reqType>Leaves</m_reqType>
-    <m_reqStatus>Pending</m_reqStatus>
+    <m_reqStatus>Approved</m_reqStatus>
     <m_raisedBy>464951</m_raisedBy>
-    <m_approvedBy xsi:nil="true" />
+    <m_approvedBy>736251</m_approvedBy>
     <m_requestdate>2025-02-18T17:08:15.334714+05:00</m_requestdate>
-    <m_approveddate xsi:nil="true" />
+    <m_approveddate>2025-02-18T17:45:39.5974118+05:00</m_approveddate>
     <m_leaverequest>
       <m_enLeaveType>Casual</m_enLeaveType>
       <m_nNoOfDays>2</m_nNoOfDays>

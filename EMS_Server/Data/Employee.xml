@@ -24,12 +24,12 @@
       <m_nEarlyLeave>0</m_nEarlyLeave>
     </m_attendance>
     <m_leaves>
-      <m_nCasualLeaves>10</m_nCasualLeaves>
+      <m_nCasualLeaves>8</m_nCasualLeaves>
       <m_nSickLeaves>10</m_nSickLeaves>
       <m_nAnnualLeaves>20</m_nAnnualLeaves>
       <m_nApprovedLeaves>0</m_nApprovedLeaves>
       <m_nTotalAvailedLeaves>0</m_nTotalAvailedLeaves>
-      <m_nBalanceLeaves>0</m_nBalanceLeaves>
+      <m_nBalanceLeaves>-2</m_nBalanceLeaves>
     </m_leaves>
     <m_bIsAuthentic>true</m_bIsAuthentic>
   </Employee>

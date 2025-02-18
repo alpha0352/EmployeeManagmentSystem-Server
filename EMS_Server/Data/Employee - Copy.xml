@@ -1,169 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfEmployee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-	<Employee>
-    <m_nId>9</m_nId>
-    <m_stPwd>Emp456</m_stPwd>
-    <m_stName>Michael Brown</m_stName>
+  <Employee>
+    <m_nId>464951</m_nId>
+    <m_stPwd>54d5cb2d332dbdb4850293caae4559ce88b65163f1ea5d4e4b3ac49d772ded14</m_stPwd>
+    <m_stName>Richard Stark</m_stName>
     <m_stGender>Male</m_stGender>
-    <m_stEmail>michael@trafix.com</m_stEmail>
-    <m_stPhone>056332855222</m_stPhone>
-    <m_stAddress>1234 Maple Street, Springfield, IL 62704</m_stAddress>
-    <m_dtDob>2001-02-27T00:00:00</m_dtDob>
-    <m_stReligion>Christian</m_stReligion>
+    <m_stEmail>johnm@trafix.com</m_stEmail>
+    <m_stPhone>+12-645-5463-242</m_stPhone>
+    <m_stAddress>1234 Street 4, Main Bvd, TX</m_stAddress>
+    <m_dtDob>1998-01-01T00:00:00</m_dtDob>
+    <m_stReligion>Christianity</m_stReligion>
     <m_stMaritalStatus>Single</m_stMaritalStatus>
-    <m_stDesignation>Project Manager</m_stDesignation>
-    <m_stDepartment>Quality Assurance</m_stDepartment>
+    <m_stDesignation>Senior QA</m_stDesignation>
+    <m_stDepartment>QA</m_stDepartment>
     <m_enRole>Employee</m_enRole>
-    <m_dSalary>95000</m_dSalary>
+    <m_dSalary>350000</m_dSalary>
     <m_attendance>
-      <m_bIsPresent>true</m_bIsPresent>
-      <m_nPresentDays>95</m_nPresentDays>
-      <m_nAbsentDays>5</m_nAbsentDays>
-      <m_nHalfDays>1</m_nHalfDays>
+      <m_bIsPresent>false</m_bIsPresent>
+      <m_nPresentDays>0</m_nPresentDays>
+      <m_nAbsentDays>0</m_nAbsentDays>
+      <m_nHalfDays>0</m_nHalfDays>
       <m_nLate>0</m_nLate>
-      <m_nEarlyLeave>2</m_nEarlyLeave>
+      <m_nEarlyLeave>0</m_nEarlyLeave>
     </m_attendance>
     <m_leaves>
       <m_nCasualLeaves>10</m_nCasualLeaves>
-      <m_nSickLeaves>8</m_nSickLeaves>
-      <m_nAnnualLeaves>0</m_nAnnualLeaves>
-      <m_nApprovedLeaves>10</m_nApprovedLeaves>
-      <m_nTotalAvailedLeaves>10</m_nTotalAvailedLeaves>
-      <m_nBalanceLeaves>18</m_nBalanceLeaves>
-    </m_leaves>
-    <m_bIsAuthentic>true</m_bIsAuthentic>
-  </Employee>
-  <Employee>
-    <m_nId>216563</m_nId>
-    <m_stPwd>asd123</m_stPwd>
-    <m_stName>Anas Ali</m_stName>
-    <m_stGender>Male</m_stGender>
-    <m_stEmail>anas@mail.com</m_stEmail>
-    <m_stPhone>+12-312-3123-</m_stPhone>
-    <m_stAddress>asd my home, karachi, paksitan</m_stAddress>
-    <m_dtDob>2012-12-06T00:00:00</m_dtDob>
-    <m_stReligion>Islam</m_stReligion>
-    <m_stMaritalStatus>Married</m_stMaritalStatus>
-    <m_stDesignation>Jr. Software Developer</m_stDesignation>
-    <m_stDepartment>Development</m_stDepartment>
-    <m_enRole>Employee</m_enRole>
-    <m_dSalary>123210</m_dSalary>
-    <m_attendance>
-      <m_bIsPresent>false</m_bIsPresent>
-      <m_nPresentDays>0</m_nPresentDays>
-      <m_nAbsentDays>0</m_nAbsentDays>
-      <m_nHalfDays>0</m_nHalfDays>
-      <m_nLate>0</m_nLate>
-      <m_nEarlyLeave>0</m_nEarlyLeave>
-    </m_attendance>
-    <m_leaves>
-      <m_nCasualLeaves>12</m_nCasualLeaves>
-      <m_nSickLeaves>12</m_nSickLeaves>
-      <m_nAnnualLeaves>12</m_nAnnualLeaves>
-      <m_nApprovedLeaves>0</m_nApprovedLeaves>
-      <m_nTotalAvailedLeaves>0</m_nTotalAvailedLeaves>
-      <m_nBalanceLeaves>0</m_nBalanceLeaves>
-    </m_leaves>
-    <m_bIsAuthentic>true</m_bIsAuthentic>
-  </Employee>
-  <Employee>
-    <m_nId>871754</m_nId>
-    <m_stPwd>asd123</m_stPwd>
-    <m_stName>Ali Ahmed</m_stName>
-    <m_stGender>Male</m_stGender>
-    <m_stEmail>anasali@trafix.com</m_stEmail>
-    <m_stPhone>+12-312-3123-123</m_stPhone>
-    <m_stAddress>House No. A43, Street 4, PECHS, KHi</m_stAddress>
-    <m_dtDob>1992-01-01T00:00:00</m_dtDob>
-    <m_stReligion>Islam</m_stReligion>
-    <m_stMaritalStatus>Single</m_stMaritalStatus>
-    <m_stDesignation>Junior QA</m_stDesignation>
-    <m_stDepartment>Quality Assurance</m_stDepartment>
-    <m_enRole>Employee</m_enRole>
-    <m_dSalary>65400</m_dSalary>
-    <m_attendance>
-      <m_bIsPresent>false</m_bIsPresent>
-      <m_nPresentDays>0</m_nPresentDays>
-      <m_nAbsentDays>0</m_nAbsentDays>
-      <m_nHalfDays>0</m_nHalfDays>
-      <m_nLate>0</m_nLate>
-      <m_nEarlyLeave>0</m_nEarlyLeave>
-    </m_attendance>
-    <m_leaves>
-      <m_nCasualLeaves>12</m_nCasualLeaves>
       <m_nSickLeaves>10</m_nSickLeaves>
-      <m_nAnnualLeaves>10</m_nAnnualLeaves>
+      <m_nAnnualLeaves>20</m_nAnnualLeaves>
       <m_nApprovedLeaves>0</m_nApprovedLeaves>
       <m_nTotalAvailedLeaves>0</m_nTotalAvailedLeaves>
       <m_nBalanceLeaves>0</m_nBalanceLeaves>
     </m_leaves>
     <m_bIsAuthentic>true</m_bIsAuthentic>
   </Employee>
-	<Employee>
-		<m_nId>763362</m_nId>
-		<m_stPwd>asd123</m_stPwd>
-		<m_stName>Anas Ali</m_stName>
-		<m_stGender>Male</m_stGender>
-		<m_stEmail>anasa@trafix.com</m_stEmail>
-		<m_stPhone>+12-321-3123-321</m_stPhone>
-		<m_stAddress>A12 ,  somewhre, khi</m_stAddress>
-		<m_dtDob>2003-01-01T00:00:00</m_dtDob>
-		<m_stReligion>Islam</m_stReligion>
-		<m_stMaritalStatus>Single</m_stMaritalStatus>
-		<m_stDesignation>Jr. Software Developer</m_stDesignation>
-		<m_stDepartment>Development</m_stDepartment>
-		<m_enRole>Employee</m_enRole>
-		<m_dSalary>123000</m_dSalary>
-		<m_attendance>
-			<m_bIsPresent>false</m_bIsPresent>
-			<m_nPresentDays>0</m_nPresentDays>
-			<m_nAbsentDays>0</m_nAbsentDays>
-			<m_nHalfDays>0</m_nHalfDays>
-			<m_nLate>0</m_nLate>
-			<m_nEarlyLeave>0</m_nEarlyLeave>
-		</m_attendance>
-		<m_leaves>
-			<m_nCasualLeaves>10</m_nCasualLeaves>
-			<m_nSickLeaves>8</m_nSickLeaves>
-			<m_nAnnualLeaves>10</m_nAnnualLeaves>
-			<m_nApprovedLeaves>0</m_nApprovedLeaves>
-			<m_nTotalAvailedLeaves>0</m_nTotalAvailedLeaves>
-			<m_nBalanceLeaves>0</m_nBalanceLeaves>
-		</m_leaves>
-		<m_bIsAuthentic>true</m_bIsAuthentic>
-	</Employee>
-	<Employee>
-		<m_nId>606651</m_nId>
-		<m_stPwd>asd123</m_stPwd>
-		<m_stName>Ahmed Sheikh</m_stName>
-		<m_stGender>Male</m_stGender>
-		<m_stEmail>asheikh@trafix.com</m_stEmail>
-		<m_stPhone>+12-121-5342-343</m_stPhone>
-		<m_stAddress>House No. B56, PECHS, Karachi</m_stAddress>
-		<m_dtDob>1997-02-13T00:00:00</m_dtDob>
-		<m_stReligion>Islam</m_stReligion>
-		<m_stMaritalStatus>Single</m_stMaritalStatus>
-		<m_stDesignation>Jr. QA</m_stDesignation>
-		<m_stDepartment>QA</m_stDepartment>
-		<m_enRole>Employee</m_enRole>
-		<m_dSalary>123000</m_dSalary>
-		<m_attendance>
-			<m_bIsPresent>false</m_bIsPresent>
-			<m_nPresentDays>0</m_nPresentDays>
-			<m_nAbsentDays>0</m_nAbsentDays>
-			<m_nHalfDays>0</m_nHalfDays>
-			<m_nLate>0</m_nLate>
-			<m_nEarlyLeave>0</m_nEarlyLeave>
-		</m_attendance>
-		<m_leaves>
-			<m_nCasualLeaves>10</m_nCasualLeaves>
-			<m_nSickLeaves>10</m_nSickLeaves>
-			<m_nAnnualLeaves>10</m_nAnnualLeaves>
-			<m_nApprovedLeaves>0</m_nApprovedLeaves>
-			<m_nTotalAvailedLeaves>0</m_nTotalAvailedLeaves>
-			<m_nBalanceLeaves>0</m_nBalanceLeaves>
-		</m_leaves>
-		<m_bIsAuthentic>true</m_bIsAuthentic>
-	</Employee>
-
 </ArrayOfEmployee>

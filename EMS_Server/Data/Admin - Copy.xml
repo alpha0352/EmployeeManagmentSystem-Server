@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfAdmin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Admin>
-    <m_nId>1</m_nId>
-    <m_stPwd>Emp456</m_stPwd>
+    <m_nId>736251</m_nId>
+    <m_stPwd>480e5b2a75cc8b03794a4b8a0f83a11be441de00bbd237ba99f0b97d11038c5a</m_stPwd>
     <m_stName>Harry Potter</m_stName>
-    <m_dtDob>0001-01-01T00:00:00</m_dtDob>
+    <m_stGender>Male</m_stGender>
+    <m_stEmail>hpotter@trafix.com</m_stEmail>
+    <m_stPhone>+12-354-3654-353</m_stPhone>
+    <m_stAddress>1234 Street 4, Main Bvd, TX</m_stAddress>
+    <m_dtDob>2004-02-17T00:00:00+05:00</m_dtDob>
+    <m_stReligion>Christianity</m_stReligion>
+    <m_stMaritalStatus>Single</m_stMaritalStatus>
     <m_stDesignation>System Administrator</m_stDesignation>
+    <m_stDepartment>HR</m_stDepartment>
     <m_enRole>Admin</m_enRole>
     <m_dSalary>90000</m_dSalary>
     <m_attendance>
       <m_bIsPresent>true</m_bIsPresent>
-      <m_nPresentDays>90</m_nPresentDays>
+      <m_nPresentDays>45</m_nPresentDays>
       <m_nAbsentDays>10</m_nAbsentDays>
       <m_nHalfDays>1</m_nHalfDays>
       <m_nLate>2</m_nLate>
@@ -27,28 +34,35 @@
     <m_bIsAuthentic>true</m_bIsAuthentic>
   </Admin>
   <Admin>
-    <m_nId>2</m_nId>
-    <m_stPwd>Admin123</m_stPwd>
-    <m_stName>John Doe</m_stName>
-    <m_dtDob>0001-01-01T00:00:00</m_dtDob>
-    <m_stDesignation>System Administrator</m_stDesignation>
+    <m_nId>207471</m_nId>
+    <m_stPwd>54d5cb2d332dbdb4850293caae4559ce88b65163f1ea5d4e4b3ac49d772ded14</m_stPwd>
+    <m_stName>John Michael</m_stName>
+    <m_stGender>Male</m_stGender>
+    <m_stEmail>johnm@trafix.com</m_stEmail>
+    <m_stPhone>+12-312-3123-123</m_stPhone>
+    <m_stAddress>1234 Street 4, Main Bvd, TX</m_stAddress>
+    <m_dtDob>1998-01-01T00:00:00</m_dtDob>
+    <m_stReligion>Christianity</m_stReligion>
+    <m_stMaritalStatus>Single</m_stMaritalStatus>
+    <m_stDesignation>Senior GM</m_stDesignation>
+    <m_stDepartment>System Administrator</m_stDepartment>
     <m_enRole>Admin</m_enRole>
-    <m_dSalary>90000</m_dSalary>
+    <m_dSalary>891000</m_dSalary>
     <m_attendance>
-      <m_bIsPresent>true</m_bIsPresent>
-      <m_nPresentDays>90</m_nPresentDays>
-      <m_nAbsentDays>10</m_nAbsentDays>
-      <m_nHalfDays>1</m_nHalfDays>
-      <m_nLate>2</m_nLate>
-      <m_nEarlyLeave>1</m_nEarlyLeave>
+      <m_bIsPresent>false</m_bIsPresent>
+      <m_nPresentDays>0</m_nPresentDays>
+      <m_nAbsentDays>0</m_nAbsentDays>
+      <m_nHalfDays>0</m_nHalfDays>
+      <m_nLate>0</m_nLate>
+      <m_nEarlyLeave>0</m_nEarlyLeave>
     </m_attendance>
     <m_leaves>
       <m_nCasualLeaves>10</m_nCasualLeaves>
-      <m_nSickLeaves>10</m_nSickLeaves>
-      <m_nAnnualLeaves>0</m_nAnnualLeaves>
-      <m_nApprovedLeaves>2</m_nApprovedLeaves>
-      <m_nTotalAvailedLeaves>2</m_nTotalAvailedLeaves>
-      <m_nBalanceLeaves>16</m_nBalanceLeaves>
+      <m_nSickLeaves>15</m_nSickLeaves>
+      <m_nAnnualLeaves>30</m_nAnnualLeaves>
+      <m_nApprovedLeaves>0</m_nApprovedLeaves>
+      <m_nTotalAvailedLeaves>0</m_nTotalAvailedLeaves>
+      <m_nBalanceLeaves>0</m_nBalanceLeaves>
     </m_leaves>
     <m_bIsAuthentic>true</m_bIsAuthentic>
   </Admin>

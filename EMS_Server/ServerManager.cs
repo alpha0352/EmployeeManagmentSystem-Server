@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -56,16 +57,16 @@ namespace EMS_Server
 
                 while (!m_CancellationTokenSource.IsCancellationRequested)
                 {
-                    Console.WriteLine("Waiting for client....");
+                    //Console.WriteLine("Waiting for client....");
                     TcpClient client = serverSocket.AcceptTcpClient();
                     NetworkStream ns = client.GetStream();
 
-                    byte[] uidbuffer = new byte[17000];
-                    ns.Read(uidbuffer, 0, uidbuffer.Length);
-                    string msg = Encoding.UTF8.GetString(uidbuffer, 0, uidbuffer.Length);
+                    //byte[] uidbuffer = new byte[17000];
+                    //ns.Read(uidbuffer, 0, uidbuffer.Length);
+                    //string msg = Encoding.UTF8.GetString(uidbuffer, 0, uidbuffer.Length);
 
                     Guid clientID = Guid.NewGuid();
-                    Console.WriteLine($"Client {clientID} connected!");
+                    //Console.WriteLine($"Client {clientID} connected!");
 
                     Client newClient = new Client(client, clientID);
                     clients.Add(newClient);
@@ -105,15 +106,25 @@ namespace EMS_Server
                 
                 while (client.client_socket.Connected)
                 {
-                    byte[] buffer = new byte[15000];
-                    int bytesRead = ns.Read(buffer, 0, buffer.Length);
-                    string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
-                    if (!string.IsNullOrEmpty(message))
+                    using (MemoryStream ms = new MemoryStream())
                     {
-                        Console.WriteLine($"\n\nReceived: {message}\n\n");
-                        Debug.WriteLine($"\n\nReceived: {message}\n\n");
-                        Packet jsonPacket = JsonSerializer.Deserialize<Packet>(message);
-                        msgRecieved?.Invoke(client, jsonPacket);
+                        byte[] buffer = new byte[1024];
+                        int bytesRead = ns.Read(buffer, 0, buffer.Length);
+                        while (bytesRead > 0)
+                        {
+                            ms.Write(buffer, 0, bytesRead);
+                            if (!ns.DataAvailable) break;
+                            bytesRead = ns.Read(buffer, 0, buffer.Length);
+                        }
+                        string message = Encoding.ASCII.GetString(ms.ToArray());
+                        
+                        if (!string.IsNullOrEmpty(message))
+                        {
+                            Console.WriteLine($"\n\nReceived: {message}\n\n");
+                            Debug.WriteLine($"\n\nReceived: {message}\n\n");
+                            Packet jsonPacket = JsonSerializer.Deserialize<Packet>(message);
+                            msgRecieved?.Invoke(client, jsonPacket);
+                        }
                     }
                 }
             }

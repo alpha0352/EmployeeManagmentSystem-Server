@@ -1,93 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Request>
-    <m_reqID>8386</m_reqID>
+    <m_reqID>2993</m_reqID>
     <m_reqType>Signup</m_reqType>
     <m_reqStatus>Approved</m_reqStatus>
-    <m_raisedBy>216563</m_raisedBy>
-    <m_approvedBy>1</m_approvedBy>
-    <m_requestdate>2025-02-13T11:51:59.6837037+05:00</m_requestdate>
-    <m_approveddate>2025-02-13T11:52:37.1346941+05:00</m_approveddate>
+    <m_raisedBy>207471</m_raisedBy>
+    <m_approvedBy>736251</m_approvedBy>
+    <m_requestdate>2025-02-18T16:24:04.833695+05:00</m_requestdate>
+    <m_approveddate>2025-02-18T16:25:13.1526513+05:00</m_approveddate>
   </Request>
   <Request>
-    <m_reqID>1620</m_reqID>
-    <m_reqType>Attendance</m_reqType>
-    <m_reqStatus>Pending</m_reqStatus>
-    <m_raisedBy>216563</m_raisedBy>
-    <m_approvedBy xsi:nil="true" />
-    <m_requestdate>2025-02-13T11:54:38.4747435+05:00</m_requestdate>
-    <m_approveddate xsi:nil="true" />
-    <m_leaverequest>
-      <m_leaveType>Casual</m_leaveType>
-      <m_noOfDays>0</m_noOfDays>
-      <m_startDate>0001-01-01T00:00:00</m_startDate>
-      <m_endDate>0001-01-01T00:00:00</m_endDate>
-    </m_leaverequest>
-    <m_attendancerequest>
-      <m_attendancetype>Late</m_attendancetype>
-      <m_attendanceDate>2024-01-15T00:00:00</m_attendanceDate>
-      <m_indate>2024-01-15T00:00:00</m_indate>
-      <m_intime>0001-01-01T01:00:00</m_intime>
-      <m_outdate>2024-01-15T00:00:00</m_outdate>
-      <m_outtime>0001-01-01T06:00:00</m_outtime>
-      <m_reason>Traffic.</m_reason>
-    </m_attendancerequest>
-  </Request>
-  <Request>
-    <m_reqID>7101</m_reqID>
+    <m_reqID>9562</m_reqID>
     <m_reqType>Signup</m_reqType>
     <m_reqStatus>Approved</m_reqStatus>
-    <m_raisedBy>189345</m_raisedBy>
-    <m_approvedBy>1</m_approvedBy>
-    <m_requestdate>2025-02-14T16:21:00.2128019+05:00</m_requestdate>
-    <m_approveddate>2025-02-14T16:21:32.1560519+05:00</m_approveddate>
+    <m_raisedBy>464951</m_raisedBy>
+    <m_approvedBy>736251</m_approvedBy>
+    <m_requestdate>2025-02-18T16:27:43.7382518+05:00</m_requestdate>
+    <m_approveddate>2025-02-18T16:50:04.4320922+05:00</m_approveddate>
   </Request>
   <Request>
-    <m_reqID>5845</m_reqID>
+    <m_reqID>5225</m_reqID>
     <m_reqType>Leaves</m_reqType>
     <m_reqStatus>Pending</m_reqStatus>
-    <m_raisedBy>216563</m_raisedBy>
+    <m_raisedBy>464951</m_raisedBy>
     <m_approvedBy xsi:nil="true" />
-    <m_requestdate>2025-02-14T17:09:25.4096364+05:00</m_requestdate>
+    <m_requestdate>2025-02-18T17:08:15.334714+05:00</m_requestdate>
     <m_approveddate xsi:nil="true" />
     <m_leaverequest>
-      <m_leaveType>Sick</m_leaveType>
-      <m_noOfDays>3</m_noOfDays>
-      <m_startDate>2024-01-15T00:00:00</m_startDate>
-      <m_endDate>2024-01-18T00:00:00</m_endDate>
-      <m_reason>flu</m_reason>
+      <m_enLeaveType>Casual</m_enLeaveType>
+      <m_nNoOfDays>2</m_nNoOfDays>
+      <m_dtStartDate>2025-02-18T17:08:03.0224986+05:00</m_dtStartDate>
+      <m_dtEndDate>2025-02-20T17:08:03.0225542+05:00</m_dtEndDate>
+      <m_stReason>Tired</m_stReason>
     </m_leaverequest>
     <m_attendancerequest>
       <m_attendancetype>Late</m_attendancetype>
-      <m_attendanceDate>0001-01-01T00:00:00</m_attendanceDate>
-      <m_indate>0001-01-01T00:00:00</m_indate>
-      <m_intime>0001-01-01T00:00:00</m_intime>
-      <m_outdate>0001-01-01T00:00:00</m_outdate>
-      <m_outtime>0001-01-01T00:00:00</m_outtime>
-    </m_attendancerequest>
-  </Request>
-  <Request>
-    <m_reqID>6618</m_reqID>
-    <m_reqType>Attendance</m_reqType>
-    <m_reqStatus>Pending</m_reqStatus>
-    <m_raisedBy>216563</m_raisedBy>
-    <m_approvedBy xsi:nil="true" />
-    <m_requestdate>2025-02-14T17:19:20.6894328+05:00</m_requestdate>
-    <m_approveddate xsi:nil="true" />
-    <m_leaverequest>
-      <m_leaveType>Casual</m_leaveType>
-      <m_noOfDays>0</m_noOfDays>
-      <m_startDate>0001-01-01T00:00:00</m_startDate>
-      <m_endDate>0001-01-01T00:00:00</m_endDate>
-    </m_leaverequest>
-    <m_attendancerequest>
-      <m_attendancetype>EarlyLeave</m_attendancetype>
-      <m_attendanceDate>2024-01-17T00:00:00</m_attendanceDate>
-      <m_indate>2024-01-17T00:00:00</m_indate>
-      <m_intime>0001-01-01T00:00:00</m_intime>
-      <m_outdate>2024-01-17T00:00:00</m_outdate>
-      <m_outtime>0001-01-01T00:00:00</m_outtime>
-      <m_reason>Personal work</m_reason>
+      <m_dtAttendanceDate>0001-01-01T00:00:00</m_dtAttendanceDate>
+      <m_dtInDate>0001-01-01T00:00:00</m_dtInDate>
+      <m_dtInTime>0001-01-01T00:00:00</m_dtInTime>
+      <m_dtOutDate>0001-01-01T00:00:00</m_dtOutDate>
+      <m_dtOutTime>0001-01-01T00:00:00</m_dtOutTime>
     </m_attendancerequest>
   </Request>
 </ArrayOfRequest>

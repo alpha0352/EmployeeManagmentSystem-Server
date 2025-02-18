@@ -27,28 +27,28 @@ namespace EMS_Server
         public void HandleRequest(Client client, Packet pkt)
         {
 
-            if (pkt.method == MethodType.GET)
+            if (pkt.m_enMethod == MethodType.GET)
             {
-                if (pkt.dataType == CacheType.Admin)
+                if (pkt.m_enDataType == CacheType.Admin)
                 {
                     string AdminData = JsonSerializer.Serialize(CacheManager.Instance.AdminCache);
                     Packet adminPkt = new Packet("Response", MethodType.POST, CacheType.Admin, AdminData);
                     //ServerManager.SendMessage(AdminData, "AdminCache", client);
                     ServerManager.SendMessage(adminPkt, client);
                 }
-                else if (pkt.dataType == CacheType.Employee)
+                else if (pkt.m_enDataType == CacheType.Employee)
                 {
                     string EmployeeData = JsonSerializer.Serialize(CacheManager.Instance.EmployeeCache);
                     Packet empPkt = new Packet("Response", MethodType.POST, CacheType.Employee, EmployeeData);
                     ServerManager.SendMessage(empPkt, client);
                 }
-                else if (pkt.dataType == CacheType.Request)
+                else if (pkt.m_enDataType == CacheType.Request)
                 {
                     string ReqData = JsonSerializer.Serialize(CacheManager.Instance.RequestsCache);
                     Packet reqPkt = new Packet("Response", MethodType.POST, CacheType.Request, ReqData);
                     ServerManager.SendMessage(reqPkt, client);
                 }
-                else if (pkt.dataType == CacheType.All)
+                else if (pkt.m_enDataType == CacheType.All)
                 {
                     Dictionary <CacheType, string> AllCache = new Dictionary<CacheType, string>(); 
 
@@ -67,37 +67,37 @@ namespace EMS_Server
 
                 }
             }
-            else if (pkt.method == MethodType.POST)
+            else if (pkt.m_enMethod == MethodType.POST)
             {
-                if (pkt.dataType == CacheType.All)
+                if (pkt.m_enDataType == CacheType.All)
                 {
 
                     return;
                 }
-                else if (pkt.dataType == CacheType.Admin)
+                else if (pkt.m_enDataType == CacheType.Admin)
                 {
-                    Admin recd_admin = JsonSerializer.Deserialize<Admin>(pkt.dataPayload);
-                    CacheManager.Instance.updateCache(recd_admin, pkt.type);
+                    Admin recd_admin = JsonSerializer.Deserialize<Admin>(pkt.m_stDataPayload);
+                    CacheManager.Instance.updateCache(recd_admin, pkt.m_stType);
                     
                     Debug.WriteLine("Updated Admin Cache");
                 }
-                else if (pkt.dataType == CacheType.Employee)
+                else if (pkt.m_enDataType == CacheType.Employee)
                 {
-                    Employee recd_emp = JsonSerializer.Deserialize<Employee>(pkt.dataPayload);
-                    CacheManager.Instance.updateCache(recd_emp, pkt.type);
+                    Employee recd_emp = JsonSerializer.Deserialize<Employee>(pkt.m_stDataPayload);
+                    CacheManager.Instance.updateCache(recd_emp, pkt.m_stType);
                     Debug.WriteLine("Updated Employee Cache");
                 }
-                else if (pkt.dataType == CacheType.Request)
+                else if (pkt.m_enDataType == CacheType.Request)
                 {
-                    Request recd_req = JsonSerializer.Deserialize<Request>(pkt.dataPayload);
-                    CacheManager.Instance.updateCache(recd_req, pkt.type);
+                    Request recd_req = JsonSerializer.Deserialize<Request>(pkt.m_stDataPayload);
+                    CacheManager.Instance.updateCache(recd_req, pkt.m_stType);
                     Debug.WriteLine("Updated Request Cache");
                 }
                 ServerManager.BroadcastUpdates(pkt,client);
             }
-            else if(pkt.method == MethodType.PUT)
+            else if(pkt.m_enMethod == MethodType.PUT)
             {
-                Dictionary<CacheType, string> allCache = JsonSerializer.Deserialize<Dictionary<CacheType, string>>(pkt.dataPayload);
+                Dictionary<CacheType, string> allCache = JsonSerializer.Deserialize<Dictionary<CacheType, string>>(pkt.m_stDataPayload);
 
                 CacheManager.Instance.EmployeeCache = JsonSerializer.Deserialize<ObservableCollection<Employee>>(allCache[CacheType.Employee]);
                 CacheManager.Instance.AdminCache = JsonSerializer.Deserialize<ObservableCollection<Admin>>(allCache[CacheType.Admin]);

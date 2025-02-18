@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfAdmin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Admin>
-    <m_Id>1</m_Id>
-    <m_pwd>Emp456</m_pwd>
-    <m_name>Harry Potter</m_name>
-    <m_dob>0001-01-01T00:00:00</m_dob>
-    <m_designation>System Administrator</m_designation>
-    <m_role>Admin</m_role>
-    <m_salary>90000</m_salary>
+    <m_nId>1</m_nId>
+    <m_stPwd>Emp456</m_stPwd>
+    <m_stName>Harry Potter</m_stName>
+    <m_dtDob>0001-01-01T00:00:00</m_dtDob>
+    <m_stDesignation>System Administrator</m_stDesignation>
+    <m_enRole>Admin</m_enRole>
+    <m_dSalary>90000</m_dSalary>
     <m_attendance>
-      <isPresent>true</isPresent>
-      <m_presentdays>90</m_presentdays>
-      <m_absentdays>10</m_absentdays>
-      <m_halfdays>1</m_halfdays>
-      <m_late>2</m_late>
-      <m_earlyleave>1</m_earlyleave>
+      <m_bIsPresent>true</m_bIsPresent>
+      <m_nPresentDays>90</m_nPresentDays>
+      <m_nAbsentDays>10</m_nAbsentDays>
+      <m_nHalfDays>1</m_nHalfDays>
+      <m_nLate>2</m_nLate>
+      <m_nEarlyLeave>1</m_nEarlyLeave>
     </m_attendance>
     <m_leaves>
-      <m_CasualLeaves>10</m_CasualLeaves>
-      <m_SickLeaves>10</m_SickLeaves>
-      <m_AnnualLeaves>0</m_AnnualLeaves>
-      <m_ApprovedLeaves>2</m_ApprovedLeaves>
-      <m_TotalAvailedLeaves>2</m_TotalAvailedLeaves>
-      <m_BalanceLeaves>16</m_BalanceLeaves>
+      <m_nCasualLeaves>10</m_nCasualLeaves>
+      <m_nSickLeaves>10</m_nSickLeaves>
+      <m_nAnnualLeaves>0</m_nAnnualLeaves>
+      <m_nApprovedLeaves>2</m_nApprovedLeaves>
+      <m_nTotalAvailedLeaves>2</m_nTotalAvailedLeaves>
+      <m_nBalanceLeaves>16</m_nBalanceLeaves>
     </m_leaves>
-    <m_isAuthentic>true</m_isAuthentic>
+    <m_bIsAuthentic>true</m_bIsAuthentic>
   </Admin>
   <Admin>
-    <m_Id>2</m_Id>
-    <m_pwd>Admin123</m_pwd>
-    <m_name>John Doe</m_name>
-    <m_dob>0001-01-01T00:00:00</m_dob>
-    <m_designation>System Administrator</m_designation>
-    <m_role>Admin</m_role>
-    <m_salary>90000</m_salary>
+    <m_nId>2</m_nId>
+    <m_stPwd>Admin123</m_stPwd>
+    <m_stName>John Doe</m_stName>
+    <m_dtDob>0001-01-01T00:00:00</m_dtDob>
+    <m_stDesignation>System Administrator</m_stDesignation>
+    <m_enRole>Admin</m_enRole>
+    <m_dSalary>90000</m_dSalary>
     <m_attendance>
-      <isPresent>true</isPresent>
-      <m_presentdays>90</m_presentdays>
-      <m_absentdays>10</m_absentdays>
-      <m_halfdays>1</m_halfdays>
-      <m_late>2</m_late>
-      <m_earlyleave>1</m_earlyleave>
+      <m_bIsPresent>true</m_bIsPresent>
+      <m_nPresentDays>90</m_nPresentDays>
+      <m_nAbsentDays>10</m_nAbsentDays>
+      <m_nHalfDays>1</m_nHalfDays>
+      <m_nLate>2</m_nLate>
+      <m_nEarlyLeave>1</m_nEarlyLeave>
     </m_attendance>
     <m_leaves>
-      <m_CasualLeaves>10</m_CasualLeaves>
-      <m_SickLeaves>10</m_SickLeaves>
-      <m_AnnualLeaves>0</m_AnnualLeaves>
-      <m_ApprovedLeaves>2</m_ApprovedLeaves>
-      <m_TotalAvailedLeaves>2</m_TotalAvailedLeaves>
-      <m_BalanceLeaves>16</m_BalanceLeaves>
+      <m_nCasualLeaves>10</m_nCasualLeaves>
+      <m_nSickLeaves>10</m_nSickLeaves>
+      <m_nAnnualLeaves>0</m_nAnnualLeaves>
+      <m_nApprovedLeaves>2</m_nApprovedLeaves>
+      <m_nTotalAvailedLeaves>2</m_nTotalAvailedLeaves>
+      <m_nBalanceLeaves>16</m_nBalanceLeaves>
     </m_leaves>
-    <m_isAuthentic>true</m_isAuthentic>
+    <m_bIsAuthentic>true</m_bIsAuthentic>
   </Admin>
 </ArrayOfAdmin>

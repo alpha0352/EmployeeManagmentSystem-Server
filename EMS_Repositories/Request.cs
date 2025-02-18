@@ -55,7 +55,7 @@ namespace EMS_Repositories
 
         }
 
-        // create different constructors for each type of request
+        // create different constructors for each m_stType of request
         public Request(int reqId, int raisedby) //contructor for Signup request.
         {
             this.m_reqID = reqId;

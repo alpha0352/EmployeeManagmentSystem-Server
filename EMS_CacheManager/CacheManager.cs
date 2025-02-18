@@ -51,11 +51,11 @@ namespace EMS_CacheManager
                         break;
                     case "UPDATE":
 
-                        Employee TempEmp = EmployeeCache.FirstOrDefault(Employee => Employee.m_Id == emp.m_Id);
+                        Employee TempEmp = EmployeeCache.FirstOrDefault(Employee => Employee.m_nId == emp.m_nId);
 
                         if(TempEmp == null)
                         {
-                            TempEmp = EmployeeCache.FirstOrDefault(Employee => Employee.m_email == emp.m_email && Employee.m_name == emp.m_name);
+                            TempEmp = EmployeeCache.FirstOrDefault(Employee => Employee.m_stEmail == emp.m_stEmail && Employee.m_stName == emp.m_stName);
                         }
 
                         TempEmp.UpdateFrom(emp);
@@ -64,7 +64,7 @@ namespace EMS_CacheManager
 
                     case "DELETE":
 
-                        var itemToRemove = EmployeeCache.Where(e => e.m_Id == emp.m_Id).SingleOrDefault();
+                        var itemToRemove = EmployeeCache.Where(e => e.m_nId == emp.m_nId).SingleOrDefault();
                         if (itemToRemove != null)
                         {
                             EmployeeCache.Remove(itemToRemove);
@@ -82,25 +82,25 @@ namespace EMS_CacheManager
                         break;
                     case "UPDATE":
 
-                        Admin EditAdmin = AdminCache.FirstOrDefault(Admin => Admin.m_Id == temp_admin.m_Id);
+                        Admin EditAdmin = AdminCache.FirstOrDefault(Admin => Admin.m_nId == temp_admin.m_nId);
 
-                        //adminToEdit.m_Id = (int)obj;
-                        //EditAdmin.m_name = temp_admin.m_name;
-                        //EditAdmin.m_pwd = temp_admin.m_pwd;
-                        //EditAdmin.m_designation = temp_admin.m_designation;
-                        //EditAdmin.m_role = temp_admin.m_role;
-                        //EditAdmin.m_salary = temp_admin.m_salary;
-                        //EditAdmin.m_leaves.m_SickLeaves = temp_admin.m_leaves.m_SickLeaves;
-                        //EditAdmin.m_leaves.m_CasualLeaves = temp_admin.m_leaves.m_CasualLeaves;
-                        //EditAdmin.m_leaves.m_TotalAvailedLeaves = temp_admin.m_leaves.m_TotalAvailedLeaves;
-                        //EditAdmin.m_leaves.m_BalanceLeaves = temp_admin.m_leaves.m_BalanceLeaves;
+                        //adminToEdit.m_nId = (int)obj;
+                        //EditAdmin.m_stName = temp_admin.m_stName;
+                        //EditAdmin.m_stPwd = temp_admin.m_stPwd;
+                        //EditAdmin.m_stDesignation = temp_admin.m_stDesignation;
+                        //EditAdmin.m_enRole = temp_admin.m_enRole;
+                        //EditAdmin.m_dSalary = temp_admin.m_dSalary;
+                        //EditAdmin.m_leaves.m_nSickLeaves = temp_admin.m_leaves.m_nSickLeaves;
+                        //EditAdmin.m_leaves.m_nCasualLeaves = temp_admin.m_leaves.m_nCasualLeaves;
+                        //EditAdmin.m_leaves.m_nTotalAvailedLeaves = temp_admin.m_leaves.m_nTotalAvailedLeaves;
+                        //EditAdmin.m_leaves.m_nBalanceLeaves = temp_admin.m_leaves.m_nBalanceLeaves;
                         EditAdmin.UpdateFrom(temp_admin);
 
                         break;
 
                     case "DELETE":
 
-                        var itemToRemove = AdminCache.Where(e => e.m_Id == temp_admin.m_Id).SingleOrDefault();
+                        var itemToRemove = AdminCache.Where(e => e.m_nId == temp_admin.m_nId).SingleOrDefault();
                         if (itemToRemove != null)
                         {
                             AdminCache.Remove(itemToRemove);
@@ -120,7 +120,7 @@ namespace EMS_CacheManager
 
                         Request EditRequest = RequestsCache.FirstOrDefault(req => req.m_reqID == temp_request.m_reqID);
 
-                        //adminToEdit.m_Id = (int)obj;
+                        //adminToEdit.m_nId = (int)obj;
 
                         EditRequest.UpdateFrom(temp_request);
 
@@ -139,7 +139,7 @@ namespace EMS_CacheManager
             }
             else
             {
-                Debug.WriteLine("Invalid DataType");
+                Debug.WriteLine("Invalid m_enDataType");
             }
         }
 

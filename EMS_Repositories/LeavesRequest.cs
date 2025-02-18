@@ -17,15 +17,15 @@ namespace EMS_Repositories
     public class LeavesRequest
     {
         [XmlElement]
-        public LeaveType m_leaveType { get; set; }
+        public LeaveType m_enLeaveType { get; set; }
         [XmlElement]
-        public int m_noOfDays { get; set; }
+        public int m_nNoOfDays { get; set; }
         [XmlElement]
-        public DateTime m_startDate { get; set; }
+        public DateTime m_dtStartDate { get; set; }
         [XmlElement]
-        public DateTime m_endDate { get; set; }
+        public DateTime m_dtEndDate { get; set; }
         [XmlElement]
-        public string m_reason { get; set; }
+        public string m_stReason { get; set; }
 
         public LeavesRequest()
         {
@@ -36,21 +36,21 @@ namespace EMS_Repositories
 
             //this.m_approveddate = DateTime.Now;
 
-            this.m_leaveType = typeofleave;
-            this.m_noOfDays = noOfDays;
-            this.m_startDate = start;
-            this.m_endDate = end;
-            this.m_reason = reason;
+            this.m_enLeaveType = typeofleave;
+            this.m_nNoOfDays = noOfDays;
+            this.m_dtStartDate = start;
+            this.m_dtEndDate = end;
+            this.m_stReason = reason;
 
         }
 
         public LeavesRequest(LeavesRequest other)
         {
-            this.m_leaveType = other.m_leaveType;
-            this.m_noOfDays = other.m_noOfDays;
-            this.m_startDate = other.m_startDate;
-            this.m_endDate = other.m_endDate;
-            this.m_reason = other.m_reason;
+            this.m_enLeaveType = other.m_enLeaveType;
+            this.m_nNoOfDays = other.m_nNoOfDays;
+            this.m_dtStartDate = other.m_dtStartDate;
+            this.m_dtEndDate = other.m_dtEndDate;
+            this.m_stReason = other.m_stReason;
         }
 
     }

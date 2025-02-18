@@ -22,7 +22,7 @@ namespace EMS_ServerUtilities
                 typeof(T) == typeof(ObservableCollection<Employee>)? "Employee.xml" : 
                 typeof(T) == typeof(Admin) ? "Admin.xml" : typeof(T) == typeof(ObservableCollection<Admin>) ? "Admin.xml" : 
                 typeof(T) == typeof(Request) ? "Request.xml" : typeof(T) == typeof(ObservableCollection<Request>) ? "Request.xml" : 
-                throw new InvalidDataException("Invalid Object Type");
+                throw new InvalidDataException("Invalid Object m_stType");
 
                 XmlSerializer serializer = new XmlSerializer(typeof(T));
                 using (System.IO.StreamWriter writer = new System.IO.StreamWriter(path + file_name))
@@ -47,7 +47,7 @@ namespace EMS_ServerUtilities
             }
             else
             {
-                throw new InvalidDataException("Invalid Object Type");
+                throw new InvalidDataException("Invalid Object m_stType");
             }
 
             if (!File.Exists(path + file_name))

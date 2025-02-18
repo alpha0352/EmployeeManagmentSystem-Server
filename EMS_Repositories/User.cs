@@ -19,41 +19,41 @@ namespace EMS_Repositories
     public class User : ModelBase
     {
         [XmlElement]
-        public int m_Id { get; set; }
+        public int m_nId { get; set; }
         [XmlElement]
-        public string m_pwd { get; set; }
+        public string m_stPwd { get; set; }
 
         [XmlElement]
-        public string m_name { get; set; }
+        public string m_stName { get; set; }
 
         [XmlElement]
-        public string m_gender { get; set; }
+        public string m_stGender { get; set; }
 
         [XmlElement]
-        public string m_email { get; set; }
+        public string m_stEmail { get; set; }
 
         [XmlElement]
-        public string m_phone { get; set; }
+        public string m_stPhone { get; set; }
 
         [XmlElement]
-        public string m_address { get; set; }
+        public string m_stAddress { get; set; }
 
         [XmlElement]
-        public DateTime m_dob { get; set; }
+        public DateTime m_dtDob { get; set; }
 
         [XmlElement]
-        public string m_religion { get; set; }
+        public string m_stReligion { get; set; }
 
         [XmlElement]
-        public string m_maritalstatus { get; set; }
+        public string m_stMaritalStatus { get; set; }
         [XmlElement]
-        public string? m_designation { get; set; }
+        public string? m_stDesignation { get; set; }
         [XmlElement]
-        public string? m_department { get; set; }
+        public string? m_stDepartment { get; set; }
         [XmlElement]
-        public userRoles m_role { get; set; }
+        public userRoles m_enRole { get; set; }
         [XmlElement]
-        public double? m_salary { get; set; }
+        public double? m_dSalary { get; set; }
         [XmlElement]
         public Attendance m_attendance { get; set; }
         [XmlElement]
@@ -63,7 +63,7 @@ namespace EMS_Repositories
         //public Request m_request { get; set; }
 
         [XmlElement]
-        public bool m_isAuthentic { get; set; }
+        public bool m_bIsAuthentic { get; set; }
 
     }
 }

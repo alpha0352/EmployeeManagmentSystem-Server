@@ -31,8 +31,14 @@ namespace EMS_Server
         {
             m_CacheManager = CacheManager.Instance;
             StartServer();
+            
         }
 
+        public void AppExit(object? sender, EventArgs e)
+        {
+            CacheManager.Instance.SaveCache();
+            Debug.WriteLine("PROCESS EXIT");
+        }
 
         private static void StartServer()
         {
@@ -54,7 +60,7 @@ namespace EMS_Server
                     TcpClient client = serverSocket.AcceptTcpClient();
                     NetworkStream ns = client.GetStream();
 
-                    byte[] uidbuffer = new byte[1024];
+                    byte[] uidbuffer = new byte[17000];
                     ns.Read(uidbuffer, 0, uidbuffer.Length);
                     string msg = Encoding.UTF8.GetString(uidbuffer, 0, uidbuffer.Length);
 
@@ -64,10 +70,10 @@ namespace EMS_Server
                     Client newClient = new Client(client, clientID);
                     clients.Add(newClient);
 
-                    //if (clients.Count > 1)
-                    //{
-                    //    throw new Exception("server crash!");
-                    //}
+                    if (clients.Count > 1)
+                    {
+                        throw new Exception("server crash!");
+                    }
 
                     Task.Run(() => HandleClient(newClient));
                 }
@@ -138,7 +144,7 @@ namespace EMS_Server
             byte[] buffer = new byte[1024];
             NetworkStream ns = client.client_socket.GetStream();
             //Console.WriteLine($"\n\nSending: {pkt.dataPayload}\n\n");
-            Debug.WriteLine($"\n\nSending: {pkt.dataPayload}\n\n");
+            Debug.WriteLine($"\n\nSending: {pkt.m_stDataPayload}\n\n");
             buffer = Encoding.ASCII.GetBytes(JsonSerializer.Serialize(pkt));
             ns.WriteAsync(buffer, 0, buffer.Length);
             ns.Flush();
@@ -148,11 +154,11 @@ namespace EMS_Server
         {
             Console.WriteLine("Sending Broadcast...");
             byte[] buffer = new byte[1024];
-            pkt.method = MethodType.PUT;
+            pkt.m_enMethod = MethodType.PUT;
             buffer = Encoding.ASCII.GetBytes(JsonSerializer.Serialize(pkt));
 
             foreach (Client client in clients)
-            {
+            //{
                 if (client != CurrentClient) 
                 {
                     NetworkStream ns = client.client_socket.GetStream();
@@ -162,4 +168,3 @@ namespace EMS_Server
             }
         }
     }
-}

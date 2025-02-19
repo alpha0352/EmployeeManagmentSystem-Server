@@ -21,10 +21,7 @@ namespace EMS_CacheManager
         {
             get
             {
-                if (m_instance == null)
-                {
-                    m_instance = new CacheManager();
-                }
+                if (m_instance == null) m_instance = new CacheManager();
                 return m_instance;
             }
         }
@@ -47,15 +44,15 @@ namespace EMS_CacheManager
                 switch (action)
                 {
                     case "ADD":
-                        EmployeeCache.Add((Employee)(object)temp_obj);
+                        EmployeeCache.Add((Employee)(object)emp);
                         break;
                     case "UPDATE":
 
-                        Employee TempEmp = EmployeeCache.FirstOrDefault(Employee => Employee.m_nId == emp.m_nId);
+                        Employee TempEmp = EmployeeCache.FirstOrDefault(Employee => Employee.Id == emp.Id);
 
                         if(TempEmp == null)
                         {
-                            TempEmp = EmployeeCache.FirstOrDefault(Employee => Employee.m_stEmail == emp.m_stEmail && Employee.m_stName == emp.m_stName);
+                            TempEmp = EmployeeCache.FirstOrDefault(Employee => Employee.Email == emp.Email && Employee.Name == emp.Name);
                         }
 
                         TempEmp.UpdateFrom(emp);
@@ -64,7 +61,7 @@ namespace EMS_CacheManager
 
                     case "DELETE":
 
-                        var itemToRemove = EmployeeCache.Where(e => e.m_nId == emp.m_nId).SingleOrDefault();
+                        var itemToRemove = EmployeeCache.Where(e => e.Id == emp.Id).SingleOrDefault();
                         if (itemToRemove != null)
                         {
                             EmployeeCache.Remove(itemToRemove);
@@ -77,30 +74,30 @@ namespace EMS_CacheManager
                 switch (action)
                 {
                     case "ADD":
-                        AdminCache.Add((Admin)(object)temp_obj);
+                        AdminCache.Add((Admin)(object)temp_admin);
                         
                         break;
                     case "UPDATE":
 
-                        Admin EditAdmin = AdminCache.FirstOrDefault(Admin => Admin.m_nId == temp_admin.m_nId);
+                        Admin EditAdmin = AdminCache.FirstOrDefault(Admin => Admin.Id == temp_admin.Id);
 
-                        //adminToEdit.m_nId = (int)obj;
-                        //EditAdmin.m_stName = temp_admin.m_stName;
-                        //EditAdmin.m_stPwd = temp_admin.m_stPwd;
-                        //EditAdmin.m_stDesignation = temp_admin.m_stDesignation;
-                        //EditAdmin.m_enRole = temp_admin.m_enRole;
-                        //EditAdmin.m_dSalary = temp_admin.m_dSalary;
-                        //EditAdmin.m_leaves.m_nSickLeaves = temp_admin.m_leaves.m_nSickLeaves;
-                        //EditAdmin.m_leaves.m_nCasualLeaves = temp_admin.m_leaves.m_nCasualLeaves;
-                        //EditAdmin.m_leaves.m_nTotalAvailedLeaves = temp_admin.m_leaves.m_nTotalAvailedLeaves;
-                        //EditAdmin.m_leaves.m_nBalanceLeaves = temp_admin.m_leaves.m_nBalanceLeaves;
+                        //adminToEdit.Id = (int)obj;
+                        //EditAdmin.Name = temp_admin.Name;
+                        //EditAdmin.Pwd = temp_admin.Pwd;
+                        //EditAdmin.Designation = temp_admin.Designation;
+                        //EditAdmin.Role = temp_admin.Role;
+                        //EditAdmin.Salary = temp_admin.Salary;
+                        //EditAdmin.Leaves.SickLeaves = temp_admin.Leaves.SickLeaves;
+                        //EditAdmin.Leaves.CasualLeaves = temp_admin.Leaves.CasualLeaves;
+                        //EditAdmin.Leaves.AvailedLeaves = temp_admin.Leaves.AvailedLeaves;
+                        //EditAdmin.Leaves.BalanceLeaves = temp_admin.Leaves.BalanceLeaves;
                         EditAdmin.UpdateFrom(temp_admin);
 
                         break;
 
                     case "DELETE":
 
-                        var itemToRemove = AdminCache.Where(e => e.m_nId == temp_admin.m_nId).SingleOrDefault();
+                        var itemToRemove = AdminCache.Where(e => e.Id == temp_admin.Id).SingleOrDefault();
                         if (itemToRemove != null)
                         {
                             AdminCache.Remove(itemToRemove);
@@ -114,13 +111,13 @@ namespace EMS_CacheManager
                 switch (action)
                 {
                     case "ADD":
-                        RequestsCache.Add((Request)(object)temp_obj);
+                        RequestsCache.Add((Request)(object)temp_request);
                         break;
                     case "UPDATE":
 
-                        Request EditRequest = RequestsCache.FirstOrDefault(req => req.m_reqID == temp_request.m_reqID);
+                        Request EditRequest = RequestsCache.FirstOrDefault(req => req.ReqID == temp_request.ReqID);
 
-                        //adminToEdit.m_nId = (int)obj;
+                        //adminToEdit.Id = (int)obj;
 
                         EditRequest.UpdateFrom(temp_request);
 
@@ -128,7 +125,7 @@ namespace EMS_CacheManager
 
                     case "DELETE":
 
-                        var itemToRemove = RequestsCache.Where(r => r.m_reqID == temp_request.m_reqID).SingleOrDefault();
+                        var itemToRemove = RequestsCache.Where(r => r.ReqID == temp_request.ReqID).SingleOrDefault();
                         if (itemToRemove != null)
                         {
                             RequestsCache.Remove(itemToRemove);
@@ -139,7 +136,7 @@ namespace EMS_CacheManager
             }
             else
             {
-                Debug.WriteLine("Invalid m_enDataType");
+                Debug.WriteLine("Invalid DataType");
             }
         }
 

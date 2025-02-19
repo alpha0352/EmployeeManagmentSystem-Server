@@ -15,17 +15,17 @@ namespace EMS_Repositories
         }
         public SignupRequest(int reqId, string reqType)
         {
-            this.m_reqID = reqId;
-            this.m_reqStatus = RequestStatus.Pending;
-            this.m_requestdate = DateTime.Now;
-            //this.m_approveddate = DateTime.Now;
+            this.ReqID = reqId;
+            this.ReqStatus = RequestStatus.Pending;
+            this.RequestDate = DateTime.Now;
+            //this.ApprovedDate = DateTime.Now;
         }
         public SignupRequest(SignupRequest other)
         {
-            this.m_reqID = other.m_reqID;
-            this.m_reqStatus = other.m_reqStatus;
-            this.m_requestdate = other.m_requestdate;
-            //this.m_approveddate = DateTime.Now;
+            this.ReqID = other.ReqID;
+            this.ReqStatus = other.ReqStatus;
+            this.RequestDate = other.RequestDate;
+            //this.ApprovedDate = DateTime.Now;
         }
     }
 }

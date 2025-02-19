@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Request>
-    <m_reqID>2993</m_reqID>
-    <m_reqType>Signup</m_reqType>
-    <m_reqStatus>Approved</m_reqStatus>
-    <m_raisedBy>207471</m_raisedBy>
-    <m_approvedBy>736251</m_approvedBy>
-    <m_requestdate>2025-02-18T16:24:04.833695+05:00</m_requestdate>
-    <m_approveddate>2025-02-18T16:25:13.1526513+05:00</m_approveddate>
+    <ReqID>2993</ReqID>
+    <ReqType>Signup</ReqType>
+    <ReqStatus>Approved</ReqStatus>
+    <RaisedBy>207471</RaisedBy>
+    <ApprovedBy>736251</ApprovedBy>
+    <RequestDate>2025-02-18T16:24:04.833695+05:00</RequestDate>
+    <ApprovedDate>2025-02-18T16:25:13.1526513+05:00</ApprovedDate>
   </Request>
   <Request>
-    <m_reqID>9562</m_reqID>
-    <m_reqType>Signup</m_reqType>
-    <m_reqStatus>Approved</m_reqStatus>
-    <m_raisedBy>464951</m_raisedBy>
-    <m_approvedBy>736251</m_approvedBy>
-    <m_requestdate>2025-02-18T16:27:43.7382518+05:00</m_requestdate>
-    <m_approveddate>2025-02-18T16:50:04.4320922+05:00</m_approveddate>
+    <ReqID>9562</ReqID>
+    <ReqType>Signup</ReqType>
+    <ReqStatus>Approved</ReqStatus>
+    <RaisedBy>464951</RaisedBy>
+    <ApprovedBy>736251</ApprovedBy>
+    <RequestDate>2025-02-18T16:27:43.7382518+05:00</RequestDate>
+    <ApprovedDate>2025-02-18T16:50:04.4320922+05:00</ApprovedDate>
   </Request>
   <Request>
-    <m_reqID>5225</m_reqID>
-    <m_reqType>Leaves</m_reqType>
-    <m_reqStatus>Pending</m_reqStatus>
-    <m_raisedBy>464951</m_raisedBy>
-    <m_approvedBy xsi:nil="true" />
-    <m_requestdate>2025-02-18T17:08:15.334714+05:00</m_requestdate>
-    <m_approveddate xsi:nil="true" />
-    <m_leaverequest>
-      <m_enLeaveType>Casual</m_enLeaveType>
-      <m_nNoOfDays>2</m_nNoOfDays>
-      <m_dtStartDate>2025-02-18T17:08:03.0224986+05:00</m_dtStartDate>
-      <m_dtEndDate>2025-02-20T17:08:03.0225542+05:00</m_dtEndDate>
-      <m_stReason>Tired</m_stReason>
-    </m_leaverequest>
-    <m_attendancerequest>
-      <m_attendancetype>Late</m_attendancetype>
-      <m_dtAttendanceDate>0001-01-01T00:00:00</m_dtAttendanceDate>
-      <m_dtInDate>0001-01-01T00:00:00</m_dtInDate>
-      <m_dtInTime>0001-01-01T00:00:00</m_dtInTime>
-      <m_dtOutDate>0001-01-01T00:00:00</m_dtOutDate>
-      <m_dtOutTime>0001-01-01T00:00:00</m_dtOutTime>
-    </m_attendancerequest>
+    <ReqID>5225</ReqID>
+    <ReqType>Leaves</ReqType>
+    <ReqStatus>Pending</ReqStatus>
+    <RaisedBy>464951</RaisedBy>
+    <ApprovedBy xsi:nil="true" />
+    <RequestDate>2025-02-18T17:08:15.334714+05:00</RequestDate>
+    <ApprovedDate xsi:nil="true" />
+    <LeaveRequest>
+      <LeaveType>Casual</LeaveType>
+      <NoOfDays>2</NoOfDays>
+      <StartDate>2025-02-18T17:08:03.0224986+05:00</StartDate>
+      <EndDate>2025-02-20T17:08:03.0225542+05:00</EndDate>
+      <Reason>Tired</Reason>
+    </LeaveRequest>
+    <AttendanceRequest>
+      <AttendanceType>Late</AttendanceType>
+      <AttendanceDate>0001-01-01T00:00:00</AttendanceDate>
+      <InDate>0001-01-01T00:00:00</InDate>
+      <InTime>0001-01-01T00:00:00</InTime>
+      <OutDate>0001-01-01T00:00:00</OutDate>
+      <OutTime>0001-01-01T00:00:00</OutTime>
+    </AttendanceRequest>
   </Request>
 </ArrayOfRequest>

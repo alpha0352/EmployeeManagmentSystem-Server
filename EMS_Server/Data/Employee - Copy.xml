@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfEmployee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Employee>
-    <m_nId>464951</m_nId>
-    <m_stPwd>54d5cb2d332dbdb4850293caae4559ce88b65163f1ea5d4e4b3ac49d772ded14</m_stPwd>
-    <m_stName>Richard Stark</m_stName>
-    <m_stGender>Male</m_stGender>
-    <m_stEmail>johnm@trafix.com</m_stEmail>
-    <m_stPhone>+12-645-5463-242</m_stPhone>
-    <m_stAddress>1234 Street 4, Main Bvd, TX</m_stAddress>
-    <m_dtDob>1998-01-01T00:00:00</m_dtDob>
-    <m_stReligion>Christianity</m_stReligion>
-    <m_stMaritalStatus>Single</m_stMaritalStatus>
-    <m_stDesignation>Senior QA</m_stDesignation>
-    <m_stDepartment>QA</m_stDepartment>
-    <m_enRole>Employee</m_enRole>
-    <m_dSalary>350000</m_dSalary>
-    <m_attendance>
-      <m_bIsPresent>false</m_bIsPresent>
-      <m_nPresentDays>0</m_nPresentDays>
-      <m_nAbsentDays>0</m_nAbsentDays>
-      <m_nHalfDays>0</m_nHalfDays>
-      <m_nLate>0</m_nLate>
-      <m_nEarlyLeave>0</m_nEarlyLeave>
-    </m_attendance>
-    <m_leaves>
-      <m_nCasualLeaves>10</m_nCasualLeaves>
-      <m_nSickLeaves>10</m_nSickLeaves>
-      <m_nAnnualLeaves>20</m_nAnnualLeaves>
-      <m_nApprovedLeaves>0</m_nApprovedLeaves>
-      <m_nTotalAvailedLeaves>0</m_nTotalAvailedLeaves>
-      <m_nBalanceLeaves>0</m_nBalanceLeaves>
-    </m_leaves>
-    <m_bIsAuthentic>true</m_bIsAuthentic>
+    <Id>464951</Id>
+    <Pwd>54d5cb2d332dbdb4850293caae4559ce88b65163f1ea5d4e4b3ac49d772ded14</Pwd>
+    <Name>Richard Stark</Name>
+    <Gender>Male</Gender>
+    <Email>johnm@trafix.com</Email>
+    <Phone>+12-645-5463-242</Phone>
+    <Address>1234 Street 4, Main Bvd, TX</Address>
+    <Dob>1998-01-01T00:00:00</Dob>
+    <Religion>Christianity</Religion>
+    <MaritalStatus>Single</MaritalStatus>
+    <Designation>Senior QA</Designation>
+    <Department>QA</Department>
+    <Role>Employee</Role>
+    <Salary>350000</Salary>
+    <Attendance>
+      <isPresent>false</isPresent>
+      <PresentDays>0</PresentDays>
+      <AbsentDays>0</AbsentDays>
+      <HalfDays>0</HalfDays>
+      <Lates>0</Lates>
+      <EarlyLeaves>0</EarlyLeaves>
+    </Attendance>
+    <Leaves>
+      <CasualLeaves>10</CasualLeaves>
+      <SickLeaves>10</SickLeaves>
+      <AnnualLeaves>20</AnnualLeaves>
+      <ApprovedLeaves>0</ApprovedLeaves>
+      <AvailedLeaves>0</AvailedLeaves>
+      <BalanceLeaves>0</BalanceLeaves>
+    </Leaves>
+    <isAuthentic>true</isAuthentic>
   </Employee>
 </ArrayOfEmployee>

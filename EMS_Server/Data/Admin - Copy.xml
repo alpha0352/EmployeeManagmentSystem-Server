@@ -1,69 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfAdmin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Admin>
-    <m_nId>736251</m_nId>
-    <m_stPwd>480e5b2a75cc8b03794a4b8a0f83a11be441de00bbd237ba99f0b97d11038c5a</m_stPwd>
-    <m_stName>Harry Potter</m_stName>
-    <m_stGender>Male</m_stGender>
-    <m_stEmail>hpotter@trafix.com</m_stEmail>
-    <m_stPhone>+12-354-3654-353</m_stPhone>
-    <m_stAddress>1234 Street 4, Main Bvd, TX</m_stAddress>
-    <m_dtDob>2004-02-17T00:00:00+05:00</m_dtDob>
-    <m_stReligion>Christianity</m_stReligion>
-    <m_stMaritalStatus>Single</m_stMaritalStatus>
-    <m_stDesignation>System Administrator</m_stDesignation>
-    <m_stDepartment>HR</m_stDepartment>
-    <m_enRole>Admin</m_enRole>
-    <m_dSalary>90000</m_dSalary>
-    <m_attendance>
-      <m_bIsPresent>true</m_bIsPresent>
-      <m_nPresentDays>45</m_nPresentDays>
-      <m_nAbsentDays>10</m_nAbsentDays>
-      <m_nHalfDays>1</m_nHalfDays>
-      <m_nLate>2</m_nLate>
-      <m_nEarlyLeave>1</m_nEarlyLeave>
-    </m_attendance>
-    <m_leaves>
-      <m_nCasualLeaves>10</m_nCasualLeaves>
-      <m_nSickLeaves>10</m_nSickLeaves>
-      <m_nAnnualLeaves>0</m_nAnnualLeaves>
-      <m_nApprovedLeaves>2</m_nApprovedLeaves>
-      <m_nTotalAvailedLeaves>2</m_nTotalAvailedLeaves>
-      <m_nBalanceLeaves>16</m_nBalanceLeaves>
-    </m_leaves>
-    <m_bIsAuthentic>true</m_bIsAuthentic>
+    <Id>736251</Id>
+    <Pwd>480e5b2a75cc8b03794a4b8a0f83a11be441de00bbd237ba99f0b97d11038c5a</Pwd>
+    <Name>Harry Potter</Name>
+    <Gender>Male</Gender>
+    <Email>hpotter@trafix.com</Email>
+    <Phone>+12-354-3654-353</Phone>
+    <Address>1234 Street 4, Main Bvd, TX</Address>
+    <Dob>2004-02-17T00:00:00+05:00</Dob>
+    <Religion>Christianity</Religion>
+    <MaritalStatus>Single</MaritalStatus>
+    <Designation>System Administrator</Designation>
+    <Department>HR</Department>
+    <Role>Admin</Role>
+    <Salary>90000</Salary>
+    <Attendance>
+      <isPresent>true</isPresent>
+      <PresentDays>45</PresentDays>
+      <AbsentDays>10</AbsentDays>
+      <HalfDays>1</HalfDays>
+      <Lates>2</Lates>
+      <EarlyLeaves>1</EarlyLeaves>
+    </Attendance>
+    <Leaves>
+      <CasualLeaves>10</CasualLeaves>
+      <SickLeaves>10</SickLeaves>
+      <AnnualLeaves>0</AnnualLeaves>
+      <ApprovedLeaves>2</ApprovedLeaves>
+      <AvailedLeaves>2</AvailedLeaves>
+      <BalanceLeaves>16</BalanceLeaves>
+    </Leaves>
+    <isAuthentic>true</isAuthentic>
   </Admin>
   <Admin>
-    <m_nId>207471</m_nId>
-    <m_stPwd>54d5cb2d332dbdb4850293caae4559ce88b65163f1ea5d4e4b3ac49d772ded14</m_stPwd>
-    <m_stName>John Michael</m_stName>
-    <m_stGender>Male</m_stGender>
-    <m_stEmail>johnm@trafix.com</m_stEmail>
-    <m_stPhone>+12-312-3123-123</m_stPhone>
-    <m_stAddress>1234 Street 4, Main Bvd, TX</m_stAddress>
-    <m_dtDob>1998-01-01T00:00:00</m_dtDob>
-    <m_stReligion>Christianity</m_stReligion>
-    <m_stMaritalStatus>Single</m_stMaritalStatus>
-    <m_stDesignation>Senior GM</m_stDesignation>
-    <m_stDepartment>System Administrator</m_stDepartment>
-    <m_enRole>Admin</m_enRole>
-    <m_dSalary>891000</m_dSalary>
-    <m_attendance>
-      <m_bIsPresent>false</m_bIsPresent>
-      <m_nPresentDays>0</m_nPresentDays>
-      <m_nAbsentDays>0</m_nAbsentDays>
-      <m_nHalfDays>0</m_nHalfDays>
-      <m_nLate>0</m_nLate>
-      <m_nEarlyLeave>0</m_nEarlyLeave>
-    </m_attendance>
-    <m_leaves>
-      <m_nCasualLeaves>10</m_nCasualLeaves>
-      <m_nSickLeaves>15</m_nSickLeaves>
-      <m_nAnnualLeaves>30</m_nAnnualLeaves>
-      <m_nApprovedLeaves>0</m_nApprovedLeaves>
-      <m_nTotalAvailedLeaves>0</m_nTotalAvailedLeaves>
-      <m_nBalanceLeaves>0</m_nBalanceLeaves>
-    </m_leaves>
-    <m_bIsAuthentic>true</m_bIsAuthentic>
+    <Id>207471</Id>
+    <Pwd>54d5cb2d332dbdb4850293caae4559ce88b65163f1ea5d4e4b3ac49d772ded14</Pwd>
+    <Name>John Michael</Name>
+    <Gender>Male</Gender>
+    <Email>johnm@trafix.com</Email>
+    <Phone>+12-312-3123-123</Phone>
+    <Address>1234 Street 4, Main Bvd, TX</Address>
+    <Dob>1998-01-01T00:00:00</Dob>
+    <Religion>Christianity</Religion>
+    <MaritalStatus>Single</MaritalStatus>
+    <Designation>Senior GM</Designation>
+    <Department>System Administrator</Department>
+    <Role>Admin</Role>
+    <Salary>891000</Salary>
+    <Attendance>
+      <isPresent>false</isPresent>
+      <PresentDays>0</PresentDays>
+      <AbsentDays>0</AbsentDays>
+      <HalfDays>0</HalfDays>
+      <Lates>0</Lates>
+      <EarlyLeaves>0</EarlyLeaves>
+    </Attendance>
+    <Leaves>
+      <CasualLeaves>10</CasualLeaves>
+      <SickLeaves>15</SickLeaves>
+      <AnnualLeaves>30</AnnualLeaves>
+      <ApprovedLeaves>0</ApprovedLeaves>
+      <AvailedLeaves>0</AvailedLeaves>
+      <BalanceLeaves>0</BalanceLeaves>
+    </Leaves>
+    <isAuthentic>true</isAuthentic>
   </Admin>
 </ArrayOfAdmin>

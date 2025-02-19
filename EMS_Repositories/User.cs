@@ -16,54 +16,54 @@ namespace EMS_Repositories
         Admin
     }
     [Serializable]
-    public class User : ModelBase
+    public class User
     {
         [XmlElement]
-        public int m_nId { get; set; }
+        public int Id { get; set; }
         [XmlElement]
-        public string m_stPwd { get; set; }
+        public string Pwd { get; set; }
 
         [XmlElement]
-        public string m_stName { get; set; }
+        public string Name { get; set; }
 
         [XmlElement]
-        public string m_stGender { get; set; }
+        public string Gender { get; set; }
 
         [XmlElement]
-        public string m_stEmail { get; set; }
+        public string Email { get; set; }
 
         [XmlElement]
-        public string m_stPhone { get; set; }
+        public string Phone { get; set; }
 
         [XmlElement]
-        public string m_stAddress { get; set; }
+        public string Address { get; set; }
 
         [XmlElement]
-        public DateTime m_dtDob { get; set; }
+        public DateTime Dob { get; set; }
 
         [XmlElement]
-        public string m_stReligion { get; set; }
+        public string Religion { get; set; }
 
         [XmlElement]
-        public string m_stMaritalStatus { get; set; }
+        public string MaritalStatus { get; set; }
         [XmlElement]
-        public string? m_stDesignation { get; set; }
+        public string? Designation { get; set; }
         [XmlElement]
-        public string? m_stDepartment { get; set; }
+        public string? Department { get; set; }
         [XmlElement]
-        public userRoles m_enRole { get; set; }
+        public userRoles Role { get; set; }
         [XmlElement]
-        public double? m_dSalary { get; set; }
+        public double? Salary { get; set; }
         [XmlElement]
-        public Attendance m_attendance { get; set; }
+        public Attendance Attendance { get; set; }
         [XmlElement]
-        public Leaves m_leaves { get; set; }
+        public Leaves Leaves { get; set; }
 
         //[XmlElement]
         //public Request m_request { get; set; }
 
         [XmlElement]
-        public bool m_bIsAuthentic { get; set; }
+        public bool isAuthentic { get; set; }
 
     }
 }

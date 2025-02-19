@@ -18,12 +18,10 @@ namespace EMS_Server
     public class ServerManager
     {
 
-        //create stances which will initialize and all the services which will run when server starts.
-        //tcp connection
-        private static List<Client> clients = new List<Client>(); //list of clients
-        private static TcpListener serverSocket; //server socket
-        private static CancellationTokenSource m_CancellationTokenSource;
-        private static CancellationToken m_cancellationToken;
+        static List<Client> AllClients = new List<Client>(); //list of AllClient
+        static TcpListener serverSocket; //server socket
+        static CancellationTokenSource m_CancellationTokenSource;
+        static CancellationToken m_cancellationToken;
 
         public static Action<Client, Packet> msgRecieved;
 
@@ -37,6 +35,7 @@ namespace EMS_Server
 
         public void AppExit(object? sender, EventArgs e)
         {
+            m_CancellationTokenSource.Cancel();
             CacheManager.Instance.SaveCache();
             Debug.WriteLine("PROCESS EXIT");
         }
@@ -57,25 +56,16 @@ namespace EMS_Server
 
                 while (!m_CancellationTokenSource.IsCancellationRequested)
                 {
-                    //Console.WriteLine("Waiting for client....");
+
                     TcpClient client = serverSocket.AcceptTcpClient();
                     NetworkStream ns = client.GetStream();
 
-                    //byte[] uidbuffer = new byte[17000];
-                    //ns.Read(uidbuffer, 0, uidbuffer.Length);
-                    //string msg = Encoding.UTF8.GetString(uidbuffer, 0, uidbuffer.Length);
-
                     Guid clientID = Guid.NewGuid();
-                    //Console.WriteLine($"Client {clientID} connected!");
+                    Console.WriteLine($"Client {clientID} connected!");
 
                     Client newClient = new Client(client, clientID);
-                    clients.Add(newClient);
-
-                    if (clients.Count > 1)
-                    {
-                        throw new Exception("server crash!");
-                    }
-
+                    AllClients.Add(newClient);
+                    
                     Task.Run(() => HandleClient(newClient));
                 }
             }
@@ -130,22 +120,13 @@ namespace EMS_Server
             }
             catch (Exception ex)
             {
-                if (ex.GetType().Name == "IOException")
-                {
-                    Console.WriteLine("Client Disconnected");
-                }
-                else
-                {
-                    Debug.WriteLine(ex);
-                }
+                if (ex.GetType().Name == "IOException") Console.WriteLine("Client Disconnected");
+                else Debug.WriteLine(ex);
             }
             finally
             {
-                if(pkthndlr != null)
-                {
-                    pkthndlr.Dispose();
-                }
-                clients.Remove(client);
+                if(pkthndlr != null) pkthndlr.Dispose();
+                AllClients.Remove(client);
                 client.client_socket.Close();
             }
 
@@ -154,7 +135,6 @@ namespace EMS_Server
         {
             byte[] buffer = new byte[1024];
             NetworkStream ns = client.client_socket.GetStream();
-            //Console.WriteLine($"\n\nSending: {pkt.dataPayload}\n\n");
             Debug.WriteLine($"\n\nSending: {pkt.m_stDataPayload}\n\n");
             buffer = Encoding.ASCII.GetBytes(JsonSerializer.Serialize(pkt));
             ns.WriteAsync(buffer, 0, buffer.Length);
@@ -165,17 +145,18 @@ namespace EMS_Server
         {
             Console.WriteLine("Sending Broadcast...");
             byte[] buffer = new byte[1024];
-            pkt.m_enMethod = MethodType.PUT;
+            pkt.Method = MethodType.PUT;
             buffer = Encoding.ASCII.GetBytes(JsonSerializer.Serialize(pkt));
 
-            foreach (Client client in clients)
-            //{
-                if (client != CurrentClient) 
+            foreach (Client client in AllClients)
+            {
+                if (client != CurrentClient)
                 {
                     NetworkStream ns = client.client_socket.GetStream();
                     ns.WriteAsync(buffer, 0, buffer.Length);
-                    
+
                 }
             }
         }
     }
+}
